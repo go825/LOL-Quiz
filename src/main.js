@@ -26,7 +26,7 @@ function navigate(screen) {
 
 function render() {
   const views = { home: renderHome, settings: renderSettings, quiz: renderQuiz, result: renderResult };
-  app.innerHTML = `<div class="app-shell"><header class="site-header"><button class="brand" data-action="home"><span class="brand-mark">LQ</span><span>LoL QUIZ</span></button><span class="phase-badge">BETA</span></header><main>${(views[state.screen] || renderHome)()}</main><footer>LoL Quiz is not endorsed by Riot Games and does not reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties.</footer></div>`;
+  app.innerHTML = `<div class="app-shell"><header class="site-header"><button class="brand" data-action="home"><img class="brand-logo" src="/src/assets/lol-quiz-logo.png" alt="" /><span>LoL QUIZ</span></button><span class="phase-badge">BETA</span></header><main>${(views[state.screen] || renderHome)()}</main><footer>LoL Quiz is not endorsed by Riot Games and does not reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties.</footer></div>`;
   bindEvents();
 }
 

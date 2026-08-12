@@ -9,6 +9,25 @@
 - 次に行うこと: Phase 10をpush後、Phase 11（GitHub / Render公開準備）へ進む
 - 先のPhaseを実装しない: 各Phaseを個別に確認してから進行する
 
+## 2026-08-12 — サイトアイコン・ロゴ設定
+
+### 実装
+
+- ユーザー指定のChatGPT共有画像を `src/assets/lol-quiz-logo.png` として追加
+- ヘッダー左上の仮ロゴ「LQ」を画像ロゴへ置換
+- ブラウザのfaviconとApple Touch Iconに同じ画像を設定
+- README冒頭にプロジェクトロゴを掲載
+
+### 画像出典
+
+- https://chatgpt.com/s/m_6a7c254893b08191839ce0728643e575
+
+### 確認項目
+
+- [x] 自動テスト28件・ビルド成功
+- [x] PC表示46px / スマートフォン幅40pxのヘッダーロゴ設定
+- [x] faviconの読み込み成功
+
 ## 2026-08-12 — Phase 1
 
 ### 実装
