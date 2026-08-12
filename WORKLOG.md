@@ -5,7 +5,7 @@
 ## 現在地
 
 - 現在のPhase: Phase 1 — プロジェクト基盤
-- 状態: 実装・ローカル検証完了、GitHub公開作業中
+- 状態: 実装・ローカル検証完了、GitHubブランチ公開準備完了
 - 次に行うこと: Phase 1のユーザー確認後、Phase 2（Championデータ基盤）へ進む
 - 先のPhaseを実装しない: 各Phaseを個別に確認してから進行する
 
@@ -35,6 +35,7 @@
 - Champion QuizはPhase 3で追加する
 - GitHub: `https://github.com/go825/LOL-Quiz.git`
 - 公開ブランチ: `codex/phase-1-foundation`
+- 実装コミット: `135cba0`（GitHub初期履歴との統合コミット: `d9c9891`）
 
 ## 更新ルール
 
