@@ -1,9 +1,11 @@
-export async function loadQuestionWithFallback({ candidateIds, createQuestion, onError = console.error }) {
+export async function loadQuestionWithFallback({ candidateIds, createQuestion, validateQuestion = async () => {}, onError = () => {} }) {
   for (const championId of candidateIds) {
     try {
-      return await createQuestion(championId);
+      const question = await createQuestion(championId);
+      await validateQuestion(question);
+      return { championId, question };
     } catch (error) {
-      if (import.meta.env?.DEV) onError(`[LoL Quiz] Champion ${championId} を差し替えます`, error);
+      onError(championId, error);
     }
   }
   throw new Error('出題可能な候補がありません');

@@ -4,9 +4,9 @@
 
 ## 現在地
 
-- 現在のPhase: Phase 9 — Mixed Quiz
+- 現在のPhase: Phase 10 — UI・品質調整
 - 状態: 実装・検証完了、GitHub公開準備中
-- 次に行うこと: Phase 9をpush後、Phase 10（UI・品質調整）へ進む
+- 次に行うこと: Phase 10をpush後、Phase 11（GitHub / Render公開準備）へ進む
 - 先のPhaseを実装しない: 各Phaseを個別に確認してから進行する
 
 ## 2026-08-12 — Phase 1
@@ -218,6 +218,34 @@
 ### 残課題
 
 - Phase 10で全7形式・全難易度・全問題数の横断回帰、UI、エラーケースを最終調整する
+
+## 2026-08-12 — Phase 10
+
+### 調整
+
+- 全7形式×3難易度×5問題数の105構成を実データで検証する品質マトリクスを追加
+- 誤答候補と正解位置をFisher–Yatesで偏りなくシャッフル
+- 共通Asset検証・問題差し替え処理を実際のQuiz準備経路へ統合
+- 全候補失敗時の安全な終了と、途中候補失敗時の継続を自動テスト化
+- STARTの準備中表示と二重操作防止を追加
+- 古いダミー案内とPhase番号の製品UI表示を除去し、BETA表記へ変更
+- Riot第三者サービス向けLegal文をフッターへ明示
+- Quiz/Result URLのリロード時は致命的状態を復元しようとせずHOMEへ安全に戻す
+- 420px以下のヘッダー、長文、回答UIを最終調整
+
+### 確認項目
+
+- [x] 自動テスト26件成功
+- [x] 105構成すべてで指定問題数を生成し、Champion重複なし・回答形式を確認
+- [x] 全7カードから実Quizを開始（各1/5表示）
+- [x] Quiz中リロードで`#home`へ戻り、7カード表示・console errorなし
+- [x] モバイルHOME、設定、Quiz、Resultを390×844pxで確認
+- [x] Mixed 50問、Voice実再生、長いSkill Descriptionを横断確認
+- [x] ビルド・全JavaScript構文・`git diff --check`成功
+
+### 残課題
+
+- Phase 11でRender Static Site向け設定、公開手順、外部Asset/CORS/HTTPSを最終確認する
 
 ## 2026-08-12 — Phase 8
 

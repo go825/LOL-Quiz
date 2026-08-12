@@ -2,7 +2,7 @@
 
 League of Legendsのチャンピオン情報を使った、日本語向けクイズWebアプリです。Champion、Zoom、Skill Icon、Skill Name、Skill Description、Voice、Mixedの7形式を、PCとスマートフォンの両方で遊べる構成を目指しています。
 
-現在は **Phase 9（Mixed Quiz）** まで完了し、全7形式をEasy 4択、Normal 8択、Hardの日英名入力で遊べます。Mixedは6形式の既存問題生成を再利用し、種類別成績も表示します。詳しい進行状況は [WORKLOG.md](./WORKLOG.md) を参照してください。
+現在は **Phase 10（UI・品質調整）** まで完了し、全7形式をEasy 4択、Normal 8択、Hardの日英名入力で遊べます。全105構成を実データで自動検証し、Mixedでは種類別成績も表示します。詳しい進行状況は [WORKLOG.md](./WORKLOG.md) を参照してください。
 
 ## ローカル起動
 

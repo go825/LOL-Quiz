@@ -4,7 +4,7 @@ export function createChampionQuestion({ champion, champions, difficulty, random
   if (!champion) throw new Error('Champion question requires a champion');
   const optionCount = OPTION_COUNTS[difficulty];
   const options = optionCount
-    ? shuffle(champions.filter(({ id }) => id !== champion.id), random).slice(0, optionCount - 1).concat(champion).sort(() => random() - 0.5)
+    ? shuffle([...shuffle(champions.filter(({ id }) => id !== champion.id), random).slice(0, optionCount - 1), champion], random)
     : [];
   return { type: 'champion', championId: champion.id, image: champion.icon, options };
 }

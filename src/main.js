@@ -8,13 +8,14 @@ import { createSkillDescriptionQuestion, stripMarkup } from './quizzes/skill-des
 import { createVoiceQuestion } from './quizzes/voice/voice-quiz.js';
 import { createMixedQuestion } from './quizzes/mixed/mixed-quiz.js';
 import { DIFFICULTIES, QUESTION_COUNTS, advanceSession, createSession, endSession, getResult, recordAnswer } from './core/quiz/session.js';
+import { loadQuestionWithFallback } from './core/quiz/safe-question.js';
 
 const app = document.querySelector('#app');
 const repositoryPromise = ChampionRepository.load().catch((error) => {
   console.error('[LoL Quiz] Champion Repository initialization failed', error);
   return null;
 });
-const state = { screen: 'home', quizId: null, difficulty: 'easy', questionCount: 5, session: null, answered: false, repository: null, question: null, excludedIds: new Set() };
+const state = { screen: 'home', quizId: null, difficulty: 'easy', questionCount: 5, session: null, answered: false, repository: null, question: null, excludedIds: new Set(), loading: false };
 
 function navigate(screen) {
   state.screen = screen;
@@ -25,7 +26,7 @@ function navigate(screen) {
 
 function render() {
   const views = { home: renderHome, settings: renderSettings, quiz: renderQuiz, result: renderResult };
-  app.innerHTML = `<div class="app-shell"><header class="site-header"><button class="brand" data-action="home"><span class="brand-mark">LQ</span><span>LoL QUIZ</span></button><span class="phase-badge">PHASE 9</span></header><main>${(views[state.screen] || renderHome)()}</main><footer>LoL Quiz は Riot Games によって承認されたものではなく、Riot Games またはその関係者の見解や意見を反映するものではありません。</footer></div>`;
+  app.innerHTML = `<div class="app-shell"><header class="site-header"><button class="brand" data-action="home"><span class="brand-mark">LQ</span><span>LoL QUIZ</span></button><span class="phase-badge">BETA</span></header><main>${(views[state.screen] || renderHome)()}</main><footer>LoL Quiz is not endorsed by Riot Games and does not reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties.</footer></div>`;
   bindEvents();
 }
 
@@ -35,7 +36,7 @@ function renderHome() {
 
 function renderSettings() {
   const quiz = findQuiz(state.quizId);
-  return `<section class="panel"><button class="text-button" data-action="home">← クイズ一覧</button><p class="eyebrow">QUIZ SETTINGS</p><h1>${quiz.title}</h1><p>${quiz.description}</p><fieldset><legend>難易度</legend><div class="choice-grid">${Object.entries(DIFFICULTIES).map(([id, item]) => `<button class="choice ${state.difficulty === id ? 'selected' : ''}" data-difficulty="${id}"><strong>${item.label}</strong><small>${item.answerMode}</small></button>`).join('')}</div></fieldset><fieldset><legend>問題数</legend><div class="count-grid">${QUESTION_COUNTS.map((count) => `<button class="choice ${state.questionCount === count ? 'selected' : ''}" data-count="${count}">${count}</button>`).join('')}</div></fieldset><button class="primary" data-action="start">START</button><p class="demo-note">Phase 1では共通フロー確認用のダミー問題が出題されます。</p></section>`;
+  return `<section class="panel"><button class="text-button" data-action="home">← クイズ一覧</button><p class="eyebrow">QUIZ SETTINGS</p><h1>${quiz.title}</h1><p>${quiz.description}</p><fieldset><legend>難易度</legend><div class="choice-grid">${Object.entries(DIFFICULTIES).map(([id, item]) => `<button class="choice ${state.difficulty === id ? 'selected' : ''}" data-difficulty="${id}"><strong>${item.label}</strong><small>${item.answerMode}</small></button>`).join('')}</div></fieldset><fieldset><legend>問題数</legend><div class="count-grid">${QUESTION_COUNTS.map((count) => `<button class="choice ${state.questionCount === count ? 'selected' : ''}" data-count="${count}">${count}</button>`).join('')}</div></fieldset><button class="primary" data-action="start" ${state.loading ? 'disabled' : ''}>${state.loading ? '準備中…' : 'START'}</button><p class="demo-note">同じChampionは1セッション内で重複しません。</p></section>`;
 }
 
 function renderQuiz() {
@@ -174,16 +175,27 @@ function submitChampionAnswer(answer) {
 }
 
 async function handleAction(action) {
+  if (state.loading) return;
   if (action === 'home') navigate('home');
   if (action === 'settings') navigate('settings');
   if (action === 'start' || action === 'retry') {
+    state.loading = true;
+    if (action === 'start') render();
     const repository = await repositoryPromise;
-    if (!repository) return;
+    if (!repository) { state.loading = false; return; }
     state.repository = repository;
     state.excludedIds = new Set();
     state.session = createSession({ quizType: state.quizId, difficulty: state.difficulty, questionCount: state.questionCount, championIds: repository.ids() });
     state.answered = false;
-    await prepareQuestion();
+    try {
+      await prepareQuestion();
+    } catch (error) {
+      console.error(`[LoL Quiz] ${state.quizId} session could not start`, error);
+      state.loading = false;
+      if (action === 'start') render();
+      return;
+    }
+    state.loading = false;
     navigate('quiz');
   }
   if (action === 'next') {
@@ -201,27 +213,23 @@ async function prepareQuestion() {
   const index = state.session.currentIndex;
   const usedIds = new Set(state.session.candidateIds.slice(0, index));
   const candidates = [state.session.candidateIds[index], ...state.repository.ids().filter((id) => !state.session.candidateIds.includes(id))];
-  for (const championId of candidates) {
-    if (usedIds.has(championId) || state.excludedIds.has(championId)) continue;
-    const champion = state.repository.getById(championId);
-    const factories = { champion: createChampionQuestion, zoom: createZoomQuestion, 'skill-icon': createSkillIconQuestion, 'skill-name': createSkillNameQuestion, 'skill-description': createSkillDescriptionQuestion, voice: createVoiceQuestion };
-    const factory = state.quizId === 'mixed'
-      ? (input) => createMixedQuestion({ ...input, factories })
-      : factories[state.quizId];
-    try {
-      const question = factory({ champion, champions: state.repository.all(), difficulty: state.difficulty });
-      if (question.type !== 'voice') await preloadImage(question.image);
-      const candidateIds = [...state.session.candidateIds];
-      candidateIds[index] = championId;
-      state.session = { ...state.session, candidateIds };
-      state.question = question;
-      return;
-    } catch (error) {
+  const available = candidates.filter((id) => !usedIds.has(id) && !state.excludedIds.has(id));
+  const factories = { champion: createChampionQuestion, zoom: createZoomQuestion, 'skill-icon': createSkillIconQuestion, 'skill-name': createSkillNameQuestion, 'skill-description': createSkillDescriptionQuestion, voice: createVoiceQuestion };
+  const factory = state.quizId === 'mixed' ? (input) => createMixedQuestion({ ...input, factories }) : factories[state.quizId];
+  const resolved = await loadQuestionWithFallback({
+    candidateIds: available,
+    createQuestion: async (championId) => factory({ champion: state.repository.getById(championId), champions: state.repository.all(), difficulty: state.difficulty }),
+    validateQuestion: async (question) => { if (question.type !== 'voice') await preloadImage(question.image); },
+    onError: (championId, error) => {
+      const champion = state.repository.getById(championId);
       state.excludedIds.add(championId);
       console.error(`[${state.quizId} Quiz] ${champion.key} question failed; replacing question`, error);
-    }
-  }
-  throw new Error(`${state.quizId} Quizに使用できる画像がありません`);
+    },
+  });
+  const candidateIds = [...state.session.candidateIds];
+  candidateIds[index] = resolved.championId;
+  state.session = { ...state.session, candidateIds };
+  state.question = resolved.question;
 }
 
 function preloadImage(url) {
@@ -238,4 +246,5 @@ window.addEventListener('hashchange', () => {
   if (requested === 'home' || (requested === 'settings' && state.quizId) || (requested === 'quiz' && state.session) || (requested === 'result' && state.session)) { state.screen = requested; render(); }
 });
 
+if (!['', '#home'].includes(window.location.hash)) history.replaceState(null, '', '#home');
 render();
