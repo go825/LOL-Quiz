@@ -1,5 +1,10 @@
 const DEFAULT_DATA_URL = '/src/data/champions.json';
 
+export function normalizeChampionSearchText(value) {
+  return String(value).trim().normalize('NFKC').toLocaleLowerCase('en-US')
+    .replace(/[ぁ-ゖ]/g, (character) => String.fromCharCode(character.charCodeAt(0) + 0x60));
+}
+
 export class ChampionRepository {
   constructor(champions, metadata = {}) {
     this.champions = Object.freeze([...champions]);
@@ -19,8 +24,7 @@ export class ChampionRepository {
   getById(id) { return this.byId.get(Number(id)); }
   getByKey(key) { return this.byKey.get(String(key).toLowerCase()); }
   searchName(input) {
-    const value = String(input).trim();
-    const normalized = value.toLocaleLowerCase('en-US');
-    return this.champions.filter(({ nameJa, nameEn }) => nameJa.includes(value) || nameEn.toLocaleLowerCase('en-US').includes(normalized));
+    const normalized = normalizeChampionSearchText(input);
+    return this.champions.filter(({ nameJa, nameEn }) => normalizeChampionSearchText(nameJa).includes(normalized) || normalizeChampionSearchText(nameEn).includes(normalized));
   }
 }

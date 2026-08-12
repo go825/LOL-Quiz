@@ -1,5 +1,5 @@
 import { QUIZZES, findQuiz } from './quizzes/catalog.js';
-import { ChampionRepository } from './core/data/champion-repository.js';
+import { ChampionRepository, normalizeChampionSearchText } from './core/data/champion-repository.js';
 import { checkChampionAnswer, createChampionQuestion } from './quizzes/champion/champion-quiz.js';
 import { createZoomQuestion } from './quizzes/zoom/zoom-quiz.js';
 import { createSkillIconQuestion } from './quizzes/skill-icon/skill-icon-quiz.js';
@@ -154,10 +154,10 @@ function updateChampionSuggestions(event) {
   const list = document.querySelector('#champion-suggestions');
   if (!list || !value) { if (list) list.innerHTML = ''; return; }
   const japaneseInput = /[^\x00-\x7F]/.test(value);
-  const normalized = value.normalize('NFKC').toLocaleLowerCase('en-US');
+  const normalized = normalizeChampionSearchText(value);
   const matches = state.repository.all().filter((champion) => japaneseInput
-    ? champion.nameJa.includes(value)
-    : champion.nameEn.normalize('NFKC').toLocaleLowerCase('en-US').includes(normalized)).slice(0, 12);
+    ? normalizeChampionSearchText(champion.nameJa).includes(normalized)
+    : normalizeChampionSearchText(champion.nameEn).includes(normalized)).slice(0, 12);
   list.innerHTML = matches.map((champion) => `<option value="${escapeHtml(japaneseInput ? champion.nameJa : champion.nameEn)}"></option>`).join('');
 }
 

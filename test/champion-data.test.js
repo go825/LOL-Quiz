@@ -24,3 +24,10 @@ test('RepositoryはID・内部名・日英名から検索できる', () => {
   assert.equal(repository.searchName('JHIN')[0].nameJa, 'ジン');
   assert.equal(repository.searchName('ジン')[0].nameEn, 'Jhin');
 });
+
+test('日本語名はひらがなの途中入力でも検索できる', () => {
+  const kogMaw = normalizeChampion({ ja: { ...ja, id: 'KogMaw', key: '96', name: 'コグ＝マウ' }, en: { ...en, id: 'KogMaw', key: '96', name: "Kog'Maw" }, version: '1.2.3' });
+  const repository = new ChampionRepository([kogMaw]);
+  assert.equal(repository.searchName('こぐ')[0].nameJa, 'コグ＝マウ');
+  assert.equal(repository.searchName('Kog')[0].nameEn, "Kog'Maw");
+});
