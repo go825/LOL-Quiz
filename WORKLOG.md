@@ -4,9 +4,9 @@
 
 ## 現在地
 
-- 現在のPhase: Phase 6 — Skill Name Quiz
+- 現在のPhase: Phase 7 — Skill Description Quiz
 - 状態: 実装・検証完了、GitHub公開準備中
-- 次に行うこと: Phase 6をpush後、Phase 7（Skill Description Quiz）へ進む
+- 次に行うこと: Phase 7をpush後、Phase 8（Voice Quiz）の日本語音声調査へ進む
 - 先のPhaseを実装しない: 各Phaseを個別に確認してから進行する
 
 ## 2026-08-12 — Phase 1
@@ -165,3 +165,30 @@
 ### 残課題
 
 - Skill Description、Voice、Mixedは未実装
+
+## 2026-08-12 — Phase 7
+
+### 実装
+
+- P/Q/W/E/Rから日本語descriptionを選ぶ独立Skill Description Quiz Moduleを追加
+- Champion日英名・内部名を直接含む説明を検出し、文章を書き換えず出題対象から除外
+- Data Dragonの装飾タグを安全に除去し、改行と本文を保った表示へ変換
+- Easy 4択、Normal 8択、Hard日英入力を既存回答基盤から再利用
+- 回答後にChampion、スロット、スキル名、アイコン、説明全文を表示
+- 成立する説明がないChampionや画像欠損は未出題Championへ差し替え
+
+### 確認項目
+
+- [x] 自動テスト17件成功（名前漏洩検出・タグ除去を含む）
+- [x] ビルド・構文確認成功
+- [x] Easyで実説明文と4択を確認
+- [x] Normal 8択、Hard入力を確認
+- [x] 回答後にChampion、E、スキル名、アイコン、説明全文を確認
+- [x] 390×844pxで長文とHard入力のレイアウトを確認
+- [x] 420px以下のヘッダー・終了ボタン向け調整を追加
+- [x] ブラウザconsole errorなし
+
+### 残課題
+
+- VoiceはCommunityDragonで日本語Pick/Banを実データ確認してから実装判断する
+- Mixedは未実装
