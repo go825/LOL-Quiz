@@ -24,6 +24,17 @@ test('同じChampionでも乱数により表示位置が変化する', () => {
   const first = createZoomQuestion({ champion: champions[0], champions, difficulty: 'hard', random: () => 0 });
   const second = createZoomQuestion({ champion: champions[0], champions, difficulty: 'hard', random: () => 1 });
   assert.notDeepEqual(first.position, second.position);
-  assert.deepEqual(first.position, { x: 15, y: 15 });
-  assert.deepEqual(second.position, { x: 85, y: 85 });
+  assert.deepEqual(first.position, { x: 10, y: 10 });
+  assert.deepEqual(second.position, { x: 90, y: 90 });
+});
+
+test('Easyは中央固定、NormalとHardは表示位置をランダム化する', () => {
+  const easy = createZoomQuestion({ champion: champions[0], champions, difficulty: 'easy', random: () => 0 });
+  const normalStart = createZoomQuestion({ champion: champions[0], champions, difficulty: 'normal', random: () => 0 });
+  const normalEnd = createZoomQuestion({ champion: champions[0], champions, difficulty: 'normal', random: () => 1 });
+  const hardStart = createZoomQuestion({ champion: champions[0], champions, difficulty: 'hard', random: () => 0 });
+  const hardEnd = createZoomQuestion({ champion: champions[0], champions, difficulty: 'hard', random: () => 1 });
+  assert.deepEqual(easy.position, { x: 50, y: 50 });
+  assert.notDeepEqual(normalStart.position, normalEnd.position);
+  assert.notDeepEqual(hardStart.position, hardEnd.position);
 });
