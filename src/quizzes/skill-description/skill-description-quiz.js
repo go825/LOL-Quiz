@@ -3,7 +3,8 @@ import { createChampionQuestion } from '../champion/champion-quiz.js';
 const POSITIONS = ['P', 'Q', 'W', 'E', 'R'];
 
 export function createSkillDescriptionQuestion({ champion, champions, difficulty, random = Math.random }) {
-  const eligible = POSITIONS.map((position) => ({ position, ...champion.abilities?.[position] }))
+  const positions = difficulty === 'easy' ? POSITIONS.filter((position) => position !== 'P') : POSITIONS;
+  const eligible = positions.map((position) => ({ position, ...champion.abilities?.[position] }))
     .filter((ability) => ability.name && ability.icon && ability.description && !revealsChampion(ability.description, champion));
   if (eligible.length === 0) throw new Error(`${champion.key} has no eligible descriptions`);
   const ability = eligible[Math.floor(random() * eligible.length)];

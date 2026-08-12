@@ -8,11 +8,16 @@ const champion = { id: 202, key: 'Jhin', nameJa: 'ジン', nameEn: 'Jhin', icon:
 const champions = Array.from({ length: 10 }, (_, index) => index === 0 ? champion : ({ ...champion, id: 202 + index, key: `C${index}`, nameJa: `名前${index}`, nameEn: `Name${index}` }));
 
 test('説明文と回答後情報を保持した問題を作る', () => {
-  const question = createSkillDescriptionQuestion({ champion, champions, difficulty: 'easy', random: () => 0 });
+  const question = createSkillDescriptionQuestion({ champion, champions, difficulty: 'normal', random: () => 0 });
   assert.equal(question.type, 'skill-description');
   assert.equal(question.ability.position, 'P');
   assert.match(question.ability.description, /追加ダメージ/);
-  assert.equal(question.options.length, 4);
+  assert.equal(question.options.length, 8);
+});
+
+test('EasyではPassiveを出題しない', () => {
+  const question = createSkillDescriptionQuestion({ champion, champions, difficulty: 'easy', random: () => 0 });
+  assert.equal(question.ability.position, 'Q');
 });
 
 test('Champion名を直接含む説明は除外する', () => {

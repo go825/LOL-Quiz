@@ -31,12 +31,12 @@ function render() {
 }
 
 function renderHome() {
-  return `<section class="hero"><p class="eyebrow">KNOW YOUR CHAMPION</p><h1>知識を、試練へ。</h1><p>League of Legendsのチャンピオンを、7つのクイズで極めよう。</p></section><section class="quiz-grid">${QUIZZES.map((quiz) => `<button class="quiz-card" data-quiz="${quiz.id}"><span class="card-icon">${quiz.icon}</span><span><strong>${quiz.title}</strong><small>${quiz.description}</small></span><span class="arrow">→</span></button>`).join('')}</section><p class="demo-note">全7種類のQuizを実装済みです。</p>`;
+  return `<section class="hero"><p class="eyebrow">KNOW YOUR CHAMPION</p><h1>知識を、試練へ。</h1><p>League of Legendsのチャンピオンを、7つのクイズで極めよう。</p></section><section class="quiz-grid">${QUIZZES.map((quiz) => `<button class="quiz-card" data-quiz="${quiz.id}"><span class="card-icon"><span>${quiz.icon}</span></span><span><strong>${quiz.title}</strong><small>${quiz.description}</small></span><span class="arrow">→</span></button>`).join('')}</section><p class="demo-note">全7種類のQuizを実装済みです。</p>`;
 }
 
 function renderSettings() {
   const quiz = findQuiz(state.quizId);
-  return `<section class="panel"><button class="text-button" data-action="home">← クイズ一覧</button><p class="eyebrow">QUIZ SETTINGS</p><h1>${quiz.title}</h1><p>${quiz.description}</p><fieldset><legend>難易度</legend><div class="choice-grid">${Object.entries(DIFFICULTIES).map(([id, item]) => `<button class="choice ${state.difficulty === id ? 'selected' : ''}" data-difficulty="${id}"><strong>${item.label}</strong><small>${item.answerMode}</small></button>`).join('')}</div></fieldset><fieldset><legend>問題数</legend><div class="count-grid">${QUESTION_COUNTS.map((count) => `<button class="choice ${state.questionCount === count ? 'selected' : ''}" data-count="${count}">${count}</button>`).join('')}</div></fieldset><button class="primary" data-action="start" ${state.loading ? 'disabled' : ''}>${state.loading ? '準備中…' : 'START'}</button><p class="demo-note">同じChampionは1セッション内で重複しません。</p></section>`;
+  return `<section class="panel"><button class="text-button" data-action="home">← クイズ一覧</button><p class="eyebrow">QUIZ SETTINGS</p><h1>${quiz.title}</h1><p>${quiz.description}</p><fieldset><legend>難易度</legend><div class="choice-grid">${Object.entries(DIFFICULTIES).map(([id, item]) => `<button class="choice ${state.difficulty === id ? 'selected' : ''}" data-difficulty="${id}"><strong>${item.label}</strong><small>${item.answerMode}</small></button>`).join('')}</div></fieldset><fieldset><legend>問題数</legend><div class="count-grid">${QUESTION_COUNTS.map((count) => `<button class="choice ${state.questionCount === count ? 'selected' : ''}" data-count="${count}">${count}</button>`).join('')}</div></fieldset><button class="primary" data-action="start" ${state.loading ? 'disabled' : ''}>${state.loading ? '準備中…' : 'START'}</button></section>`;
 }
 
 function renderQuiz() {
@@ -84,7 +84,7 @@ function renderSkillNameQuiz() {
   const answerArea = state.answered
     ? `<section class="feedback ${lastAnswer.correct ? 'correct' : 'wrong'}"><strong>${lastAnswer.correct ? '正解' : '不正解'}</strong><div class="answer-reveal skill-name-reveal"><img src="${state.question.image}" alt="${state.question.ability.name}"><div><span>正解 · ${state.question.ability.position}</span><h2>${champion.nameJa}</h2><p>${state.question.ability.name}</p></div></div><button class="primary" data-action="next">${questionNumber === state.session.questionCount ? 'RESULT' : '次の問題'}</button></section>`
     : renderChampionAnswerArea();
-  return `<section class="quiz-layout"><div class="quiz-top"><div><span class="eyebrow">SKILL NAME</span><strong>${questionNumber} <small>/ ${state.session.questionCount}</small></strong></div><button class="danger" data-action="finish">終了</button></div><div class="progress"><span style="width:${questionNumber / state.session.questionCount * 100}%"></span></div><article class="question-panel skill-name-question"><p class="eyebrow">WHO USES THIS SKILL?</p><span class="slot-mystery">?</span><h1>${state.question.ability.name}</h1><p>このスキルを使うChampionは？</p></article>${answerArea}</section>`;
+  return `<section class="quiz-layout"><div class="quiz-top"><div><span class="eyebrow">SKILL NAME</span><strong>${questionNumber} <small>/ ${state.session.questionCount}</small></strong></div><button class="danger" data-action="finish">終了</button></div><div class="progress"><span style="width:${questionNumber / state.session.questionCount * 100}%"></span></div><article class="question-panel skill-name-question"><p class="eyebrow">WHO USES THIS SKILL?</p><span class="slot-mystery"><span>?</span></span><h1>${state.question.ability.name}</h1><p>このスキルを使うChampionは？</p></article>${answerArea}</section>`;
 }
 
 function renderSkillDescriptionQuiz() {
@@ -95,7 +95,7 @@ function renderSkillDescriptionQuiz() {
   const answerArea = state.answered
     ? `<section class="feedback ${lastAnswer.correct ? 'correct' : 'wrong'}"><strong>${lastAnswer.correct ? '正解' : '不正解'}</strong><div class="answer-reveal description-reveal"><img src="${state.question.image}" alt="${escapeHtml(state.question.ability.name)}"><div><span>正解 · ${state.question.ability.position}</span><h2>${champion.nameJa}</h2><p>${escapeHtml(state.question.ability.name)}</p></div></div><p class="description-review">${description}</p><button class="primary" data-action="next">${questionNumber === state.session.questionCount ? 'RESULT' : '次の問題'}</button></section>`
     : renderChampionAnswerArea();
-  return `<section class="quiz-layout"><div class="quiz-top"><div><span class="eyebrow">SKILL DESCRIPTION</span><strong>${questionNumber} <small>/ ${state.session.questionCount}</small></strong></div><button class="danger" data-action="finish">終了</button></div><div class="progress"><span style="width:${questionNumber / state.session.questionCount * 100}%"></span></div><article class="question-panel skill-description-question"><p class="eyebrow">WHO USES THIS SKILL?</p><span class="slot-mystery">?</span><div class="description-text">${description}</div><p>このスキルを使うChampionは？</p></article>${answerArea}</section>`;
+  return `<section class="quiz-layout"><div class="quiz-top"><div><span class="eyebrow">SKILL DESCRIPTION</span><strong>${questionNumber} <small>/ ${state.session.questionCount}</small></strong></div><button class="danger" data-action="finish">終了</button></div><div class="progress"><span style="width:${questionNumber / state.session.questionCount * 100}%"></span></div><article class="question-panel skill-description-question"><p class="eyebrow">WHO USES THIS SKILL?</p><span class="slot-mystery"><span>?</span></span><div class="description-text">${description}</div><p>このスキルを使うChampionは？</p></article>${answerArea}</section>`;
 }
 
 function renderVoiceQuiz() {
@@ -126,8 +126,7 @@ function renderChampionAnswerArea() {
   if (state.difficulty !== 'hard') {
     return `<section class="answer-grid champion-options">${state.question.options.map((champion) => `<button class="answer" data-champion-answer="${champion.id}">${champion.nameJa}<small>${champion.nameEn}</small></button>`).join('')}</section>`;
   }
-  const suggestions = state.repository.all().flatMap((champion) => [`<option value="${champion.nameJa}">${champion.nameEn}</option>`, `<option value="${champion.nameEn}">${champion.nameJa}</option>`]).join('');
-  return `<form class="hard-answer" data-hard-answer><label for="champion-input">Champion名を入力</label><div><input id="champion-input" name="champion" list="champion-suggestions" autocomplete="off" placeholder="日本語名 / English name" required><button class="primary" type="submit">回答する</button></div><datalist id="champion-suggestions">${suggestions}</datalist></form>`;
+  return `<form class="hard-answer" data-hard-answer><label for="champion-input">Champion名を入力</label><div><input id="champion-input" name="champion" list="champion-suggestions" autocomplete="off" placeholder="日本語名 / English name" required><button class="primary" type="submit">回答する</button></div><datalist id="champion-suggestions"></datalist></form>`;
 }
 
 function renderResult() {
@@ -145,8 +144,21 @@ function bindEvents() {
   document.querySelectorAll('[data-answer]').forEach((button) => button.addEventListener('click', () => { state.session = recordAnswer(state.session, { correct: button.dataset.answer === 'true', quizType: state.quizId }); state.answered = true; render(); }));
   document.querySelectorAll('[data-champion-answer]').forEach((button) => button.addEventListener('click', () => submitChampionAnswer(Number(button.dataset.championAnswer))));
   document.querySelector('[data-hard-answer]')?.addEventListener('submit', (event) => { event.preventDefault(); submitChampionAnswer(new FormData(event.currentTarget).get('champion')); });
+  document.querySelector('#champion-input')?.addEventListener('input', updateChampionSuggestions);
   document.querySelectorAll('[data-voice]').forEach((button) => button.addEventListener('click', () => playVoice(button.dataset.voice, button)));
   document.querySelectorAll('[data-action]').forEach((button) => button.addEventListener('click', () => handleAction(button.dataset.action)));
+}
+
+function updateChampionSuggestions(event) {
+  const value = event.currentTarget.value.trim();
+  const list = document.querySelector('#champion-suggestions');
+  if (!list || !value) { if (list) list.innerHTML = ''; return; }
+  const japaneseInput = /[^\x00-\x7F]/.test(value);
+  const normalized = value.normalize('NFKC').toLocaleLowerCase('en-US');
+  const matches = state.repository.all().filter((champion) => japaneseInput
+    ? champion.nameJa.includes(value)
+    : champion.nameEn.normalize('NFKC').toLocaleLowerCase('en-US').includes(normalized)).slice(0, 12);
+  list.innerHTML = matches.map((champion) => `<option value="${escapeHtml(japaneseInput ? champion.nameJa : champion.nameEn)}"></option>`).join('');
 }
 
 async function playVoice(kind, button) {
