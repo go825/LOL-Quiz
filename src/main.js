@@ -144,7 +144,11 @@ function bindEvents() {
   document.querySelectorAll('[data-answer]').forEach((button) => button.addEventListener('click', () => { state.session = recordAnswer(state.session, { correct: button.dataset.answer === 'true', quizType: state.quizId }); state.answered = true; render(); }));
   document.querySelectorAll('[data-champion-answer]').forEach((button) => button.addEventListener('click', () => submitChampionAnswer(Number(button.dataset.championAnswer))));
   document.querySelector('[data-hard-answer]')?.addEventListener('submit', (event) => { event.preventDefault(); submitChampionAnswer(new FormData(event.currentTarget).get('champion')); });
-  document.querySelector('#champion-input')?.addEventListener('input', updateChampionSuggestions);
+  const championInput = document.querySelector('#champion-input');
+  championInput?.addEventListener('input', (event) => {
+    if (!event.isComposing) updateChampionSuggestions(event);
+  });
+  championInput?.addEventListener('compositionend', updateChampionSuggestions);
   document.querySelectorAll('[data-voice]').forEach((button) => button.addEventListener('click', () => playVoice(button.dataset.voice, button)));
   document.querySelectorAll('[data-action]').forEach((button) => button.addEventListener('click', () => handleAction(button.dataset.action)));
 }
