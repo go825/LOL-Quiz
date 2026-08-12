@@ -25,3 +25,11 @@ test('Hard回答は日英名と英字大小を許容する', () => {
   assert.equal(checkChampionAnswer(question, 'Jinx', repository), false);
   assert.equal(championSuggestions(repository, 'jh')[0].nameJa, 'ジン');
 });
+
+test('Hard回答はひらがなとカタカナを同一として判定する', () => {
+  const kogMaw = { id: 96, key: 'KogMaw', nameJa: 'コグ＝マウ', nameEn: "Kog'Maw", icon: 'KogMaw.png' };
+  const kogRepository = new ChampionRepository([kogMaw]);
+  const question = createChampionQuestion({ champion: kogMaw, champions: [kogMaw], difficulty: 'hard' });
+  assert.equal(checkChampionAnswer(question, 'こぐ＝まう', kogRepository), true);
+  assert.equal(checkChampionAnswer(question, 'こぐ=まう', kogRepository), true);
+});

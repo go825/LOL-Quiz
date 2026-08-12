@@ -126,7 +126,7 @@ function renderChampionAnswerArea() {
   if (state.difficulty !== 'hard') {
     return `<section class="answer-grid champion-options">${state.question.options.map((champion) => `<button class="answer" data-champion-answer="${champion.id}">${champion.nameJa}<small>${champion.nameEn}</small></button>`).join('')}</section>`;
   }
-  return `<form class="hard-answer" data-hard-answer><label for="champion-input">Champion名を入力</label><div><input id="champion-input" name="champion" list="champion-suggestions" autocomplete="off" placeholder="日本語名 / English name" required><button class="primary" type="submit">回答する</button></div><datalist id="champion-suggestions"></datalist></form>`;
+  return `<form class="hard-answer" data-hard-answer><label for="champion-input">Champion名を入力</label><div class="hard-answer-row"><div class="champion-input-wrap"><input id="champion-input" name="champion" autocomplete="off" aria-autocomplete="list" aria-controls="champion-suggestions" placeholder="日本語名 / English name" required><div id="champion-suggestions" class="champion-suggestions" role="listbox"></div></div><button class="primary" type="submit">回答する</button></div></form>`;
 }
 
 function renderResult() {
@@ -149,6 +149,13 @@ function bindEvents() {
     if (!event.isComposing) updateChampionSuggestions(event);
   });
   championInput?.addEventListener('compositionend', updateChampionSuggestions);
+  document.querySelector('#champion-suggestions')?.addEventListener('click', (event) => {
+    const suggestion = event.target.closest('[data-suggestion]');
+    if (!suggestion || !championInput) return;
+    championInput.value = suggestion.dataset.suggestion;
+    event.currentTarget.innerHTML = '';
+    championInput.focus();
+  });
   document.querySelectorAll('[data-voice]').forEach((button) => button.addEventListener('click', () => playVoice(button.dataset.voice, button)));
   document.querySelectorAll('[data-action]').forEach((button) => button.addEventListener('click', () => handleAction(button.dataset.action)));
 }
@@ -162,7 +169,10 @@ function updateChampionSuggestions(event) {
   const matches = state.repository.all().filter((champion) => japaneseInput
     ? normalizeChampionSearchText(champion.nameJa).includes(normalized)
     : normalizeChampionSearchText(champion.nameEn).includes(normalized)).slice(0, 12);
-  list.innerHTML = matches.map((champion) => `<option value="${escapeHtml(japaneseInput ? champion.nameJa : champion.nameEn)}"></option>`).join('');
+  list.innerHTML = matches.map((champion) => {
+    const name = japaneseInput ? champion.nameJa : champion.nameEn;
+    return `<button type="button" role="option" data-suggestion="${escapeHtml(name)}">${escapeHtml(name)}</button>`;
+  }).join('');
 }
 
 async function playVoice(kind, button) {

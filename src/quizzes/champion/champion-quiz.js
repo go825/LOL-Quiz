@@ -1,3 +1,5 @@
+import { normalizeChampionSearchText } from '../../core/data/champion-repository.js';
+
 const OPTION_COUNTS = { easy: 4, normal: 8 };
 
 export function createChampionQuestion({ champion, champions, difficulty, random = Math.random }) {
@@ -23,7 +25,7 @@ export function championSuggestions(repository, input, limit = 8) {
 }
 
 function normalize(value) {
-  return String(value).trim().normalize('NFKC').toLocaleLowerCase('en-US');
+  return normalizeChampionSearchText(value);
 }
 
 function shuffle(values, random) {
