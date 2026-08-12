@@ -4,9 +4,9 @@
 
 ## 現在地
 
-- 現在のPhase: Phase 3 — Champion Quiz
+- 現在のPhase: Phase 4 — Zoom Quiz
 - 状態: 実装・検証完了、GitHub公開準備中
-- 次に行うこと: Phase 3をpush後、Phase 4（Zoom Quiz）へ進む
+- 次に行うこと: Phase 4をpush後、Phase 5（Skill Icon Quiz）へ進む
 - 先のPhaseを実装しない: 各Phaseを個別に確認してから進行する
 
 ## 2026-08-12 — Phase 1
@@ -91,3 +91,28 @@
 
 - Zoom以降の6形式は未実装
 - 選択肢順の統計的なランダム性は将来の品質調整時にも確認する
+
+## 2026-08-12 — Phase 4
+
+### 実装
+
+- Data DragonのBase Splashを使う独立Zoom Quiz Moduleを追加
+- Splashを保存・加工せずCSSの背景拡大と表示領域で出題
+- 問題ごとに15〜85%の範囲で表示位置をランダム化
+- Champion Quizの4択・8択・Hard日英入力基盤を再利用
+- Splash取得失敗時に未出題Championへ差し替える処理を共通経路で適用
+- 回答後に正解Championの日英名とIconを表示
+
+### 確認項目
+
+- [x] 自動テスト10件成功（Zoom位置変化を含む）
+- [x] ビルド・構文確認成功
+- [x] Easy 4択、Normal 8択、Hard入力をブラウザ確認
+- [x] 次問でSplashと表示位置が変化することを確認
+- [x] 390×844pxでZoom問題とHard入力のレイアウトを確認
+- [x] ブラウザconsole errorなし
+
+### 残課題
+
+- Zoom倍率はv1仕様どおり難易度共通。品質調整時に視認性を再評価する
+- Skill Icon以降の5形式は未実装
