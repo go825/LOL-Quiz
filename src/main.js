@@ -3,6 +3,7 @@ import { ChampionRepository } from './core/data/champion-repository.js';
 import { checkChampionAnswer, createChampionQuestion } from './quizzes/champion/champion-quiz.js';
 import { createZoomQuestion } from './quizzes/zoom/zoom-quiz.js';
 import { createSkillIconQuestion } from './quizzes/skill-icon/skill-icon-quiz.js';
+import { createSkillNameQuestion } from './quizzes/skill-name/skill-name-quiz.js';
 import { DIFFICULTIES, QUESTION_COUNTS, advanceSession, createSession, endSession, getResult, recordAnswer } from './core/quiz/session.js';
 
 const app = document.querySelector('#app');
@@ -21,12 +22,12 @@ function navigate(screen) {
 
 function render() {
   const views = { home: renderHome, settings: renderSettings, quiz: renderQuiz, result: renderResult };
-  app.innerHTML = `<div class="app-shell"><header class="site-header"><button class="brand" data-action="home"><span class="brand-mark">LQ</span><span>LoL QUIZ</span></button><span class="phase-badge">PHASE 5</span></header><main>${(views[state.screen] || renderHome)()}</main><footer>LoL Quiz は Riot Games によって承認されたものではなく、Riot Games またはその関係者の見解や意見を反映するものではありません。</footer></div>`;
+  app.innerHTML = `<div class="app-shell"><header class="site-header"><button class="brand" data-action="home"><span class="brand-mark">LQ</span><span>LoL QUIZ</span></button><span class="phase-badge">PHASE 6</span></header><main>${(views[state.screen] || renderHome)()}</main><footer>LoL Quiz は Riot Games によって承認されたものではなく、Riot Games またはその関係者の見解や意見を反映するものではありません。</footer></div>`;
   bindEvents();
 }
 
 function renderHome() {
-  return `<section class="hero"><p class="eyebrow">KNOW YOUR CHAMPION</p><h1>知識を、試練へ。</h1><p>League of Legendsのチャンピオンを、7つのクイズで極めよう。</p></section><section class="quiz-grid">${QUIZZES.map((quiz) => `<button class="quiz-card" data-quiz="${quiz.id}"><span class="card-icon">${quiz.icon}</span><span><strong>${quiz.title}</strong><small>${quiz.description}</small></span><span class="arrow">→</span></button>`).join('')}</section><p class="demo-note">Champion / Zoom / Skill Icon Quizを実装済みです。</p>`;
+  return `<section class="hero"><p class="eyebrow">KNOW YOUR CHAMPION</p><h1>知識を、試練へ。</h1><p>League of Legendsのチャンピオンを、7つのクイズで極めよう。</p></section><section class="quiz-grid">${QUIZZES.map((quiz) => `<button class="quiz-card" data-quiz="${quiz.id}"><span class="card-icon">${quiz.icon}</span><span><strong>${quiz.title}</strong><small>${quiz.description}</small></span><span class="arrow">→</span></button>`).join('')}</section><p class="demo-note">Champion / Zoom / Skill Icon / Skill Name Quizを実装済みです。</p>`;
 }
 
 function renderSettings() {
@@ -38,6 +39,7 @@ function renderQuiz() {
   if (state.quizId === 'champion') return renderChampionQuiz();
   if (state.quizId === 'zoom') return renderZoomQuiz();
   if (state.quizId === 'skill-icon') return renderSkillIconQuiz();
+  if (state.quizId === 'skill-name') return renderSkillNameQuiz();
   const quiz = findQuiz(state.quizId);
   const questionNumber = state.session.currentIndex + 1;
   const lastAnswer = state.session.answers.at(-1);
@@ -63,6 +65,16 @@ function renderSkillIconQuiz() {
     ? `<section class="feedback ${lastAnswer.correct ? 'correct' : 'wrong'}"><strong>${lastAnswer.correct ? '正解' : '不正解'}</strong><div class="answer-reveal skill-reveal"><img src="${champion.icon}" alt=""><div><span>正解 · ${state.question.ability.position}</span><h2>${champion.nameJa}</h2><p>${state.question.ability.name}</p></div></div><button class="primary" data-action="next">${questionNumber === state.session.questionCount ? 'RESULT' : '次の問題'}</button></section>`
     : renderChampionAnswerArea();
   return `<section class="quiz-layout"><div class="quiz-top"><div><span class="eyebrow">SKILL ICON</span><strong>${questionNumber} <small>/ ${state.session.questionCount}</small></strong></div><button class="danger" data-action="finish">終了</button></div><div class="progress"><span style="width:${questionNumber / state.session.questionCount * 100}%"></span></div><article class="question-panel skill-icon-question"><p class="eyebrow">WHO USES THIS SKILL?</p><img class="skill-icon-large" src="${state.question.image}" alt="Championを当てるスキルアイコン"><h1>このスキルのChampionは？</h1></article>${answerArea}</section>`;
+}
+
+function renderSkillNameQuiz() {
+  const questionNumber = state.session.currentIndex + 1;
+  const champion = state.repository.getById(state.question.championId);
+  const lastAnswer = state.session.answers.at(-1);
+  const answerArea = state.answered
+    ? `<section class="feedback ${lastAnswer.correct ? 'correct' : 'wrong'}"><strong>${lastAnswer.correct ? '正解' : '不正解'}</strong><div class="answer-reveal skill-name-reveal"><img src="${state.question.image}" alt="${state.question.ability.name}"><div><span>正解 · ${state.question.ability.position}</span><h2>${champion.nameJa}</h2><p>${state.question.ability.name}</p></div></div><button class="primary" data-action="next">${questionNumber === state.session.questionCount ? 'RESULT' : '次の問題'}</button></section>`
+    : renderChampionAnswerArea();
+  return `<section class="quiz-layout"><div class="quiz-top"><div><span class="eyebrow">SKILL NAME</span><strong>${questionNumber} <small>/ ${state.session.questionCount}</small></strong></div><button class="danger" data-action="finish">終了</button></div><div class="progress"><span style="width:${questionNumber / state.session.questionCount * 100}%"></span></div><article class="question-panel skill-name-question"><p class="eyebrow">WHO USES THIS SKILL?</p><span class="slot-mystery">?</span><h1>${state.question.ability.name}</h1><p>このスキルを使うChampionは？</p></article>${answerArea}</section>`;
 }
 
 function renderChampionQuiz() {
@@ -131,14 +143,14 @@ async function handleAction(action) {
 
 async function prepareQuestion() {
   state.question = null;
-  if (!['champion', 'zoom', 'skill-icon'].includes(state.quizId)) return;
+  if (!['champion', 'zoom', 'skill-icon', 'skill-name'].includes(state.quizId)) return;
   const index = state.session.currentIndex;
   const usedIds = new Set(state.session.candidateIds.slice(0, index));
   const candidates = [state.session.candidateIds[index], ...state.repository.ids().filter((id) => !state.session.candidateIds.includes(id))];
   for (const championId of candidates) {
     if (usedIds.has(championId) || state.excludedIds.has(championId)) continue;
     const champion = state.repository.getById(championId);
-    const factories = { champion: createChampionQuestion, zoom: createZoomQuestion, 'skill-icon': createSkillIconQuestion };
+    const factories = { champion: createChampionQuestion, zoom: createZoomQuestion, 'skill-icon': createSkillIconQuestion, 'skill-name': createSkillNameQuestion };
     const factory = factories[state.quizId];
     try {
       const question = factory({ champion, champions: state.repository.all(), difficulty: state.difficulty });

@@ -8,3 +8,5 @@
 .zoom-question{min-height:460px}.zoom-crop{width:min(680px,100%);aspect-ratio:16/7;border:2px solid #b28b3d;background-repeat:no-repeat;background-color:#061019;box-shadow:0 20px 55px #0009,inset 0 0 30px #0007}.zoom-question h1{margin-bottom:0}@media(max-width:700px){.zoom-question{min-height:350px}.zoom-crop{aspect-ratio:4/3}}
 
 .skill-icon-question{min-height:410px}.skill-icon-large{width:min(190px,52vw);aspect-ratio:1;object-fit:cover;border:3px solid #b28b3d;box-shadow:0 22px 60px #000b,0 0 42px #a9893b33}.skill-icon-question h1{margin-bottom:0}.skill-reveal p{color:#d9c589;font-weight:700}
+
+.skill-name-question{min-height:390px}.skill-name-question h1{max-width:720px;font-family:'Noto Sans JP',sans-serif;font-size:clamp(28px,5vw,48px);line-height:1.35}.slot-mystery{display:grid;place-items:center;width:66px;height:66px;margin:24px 0 8px;border:1px solid #b28b3d;transform:rotate(45deg);color:#ebcf7b;background:#071722;font:700 28px Cinzel,serif}.skill-name-reveal p{color:#d9c589;font-weight:700}
