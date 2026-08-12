@@ -4,9 +4,9 @@
 
 ## 現在地
 
-- 現在のPhase: Phase 4 — Zoom Quiz
+- 現在のPhase: Phase 5 — Skill Icon Quiz
 - 状態: 実装・検証完了、GitHub公開準備中
-- 次に行うこと: Phase 4をpush後、Phase 5（Skill Icon Quiz）へ進む
+- 次に行うこと: Phase 5をpush後、Phase 6（Skill Name Quiz）へ進む
 - 先のPhaseを実装しない: 各Phaseを個別に確認してから進行する
 
 ## 2026-08-12 — Phase 1
@@ -116,3 +116,28 @@
 
 - Zoom倍率はv1仕様どおり難易度共通。品質調整時に視認性を再評価する
 - Skill Icon以降の5形式は未実装
+
+## 2026-08-12 — Phase 5
+
+### 実装
+
+- ChampionのP/Q/W/E/Rからランダムに選ぶ独立Skill Icon Quiz Moduleを追加
+- スキルアイコンを問題表示時に読み込み、Championを回答するUIを追加
+- Easy 4択、Normal 8択、Hard日英入力を既存回答基盤から再利用
+- 回答後に正誤、Champion日英名、P/Q/W/E/R、スキル名を表示
+- スキルデータ・画像欠損時は未出題Championへ差し替え
+
+### 確認項目
+
+- [x] 自動テスト12件成功（P/R抽選と欠損除外を含む）
+- [x] ビルド・構文確認成功
+- [x] Easy 4択、Normal 8択、Hard入力をブラウザ確認
+- [x] 回答後に`正解 · P`、Champion名、スキル名を確認
+- [x] 次問で別Championへ進むことを確認
+- [x] 390×844pxで問題とHard入力のレイアウトを確認
+- [x] 実画像の読込完了と64×64自然寸法を確認
+- [x] ブラウザconsole errorなし
+
+### 残課題
+
+- Skill Name以降の4形式は未実装
