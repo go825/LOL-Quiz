@@ -5,6 +5,7 @@ import { createZoomQuestion } from './quizzes/zoom/zoom-quiz.js';
 import { createSkillIconQuestion } from './quizzes/skill-icon/skill-icon-quiz.js';
 import { createSkillNameQuestion } from './quizzes/skill-name/skill-name-quiz.js';
 import { createSkillDescriptionQuestion, stripMarkup } from './quizzes/skill-description/skill-description-quiz.js';
+import { createVoiceQuestion } from './quizzes/voice/voice-quiz.js';
 import { DIFFICULTIES, QUESTION_COUNTS, advanceSession, createSession, endSession, getResult, recordAnswer } from './core/quiz/session.js';
 
 const app = document.querySelector('#app');
@@ -23,12 +24,12 @@ function navigate(screen) {
 
 function render() {
   const views = { home: renderHome, settings: renderSettings, quiz: renderQuiz, result: renderResult };
-  app.innerHTML = `<div class="app-shell"><header class="site-header"><button class="brand" data-action="home"><span class="brand-mark">LQ</span><span>LoL QUIZ</span></button><span class="phase-badge">PHASE 7</span></header><main>${(views[state.screen] || renderHome)()}</main><footer>LoL Quiz は Riot Games によって承認されたものではなく、Riot Games またはその関係者の見解や意見を反映するものではありません。</footer></div>`;
+  app.innerHTML = `<div class="app-shell"><header class="site-header"><button class="brand" data-action="home"><span class="brand-mark">LQ</span><span>LoL QUIZ</span></button><span class="phase-badge">PHASE 8</span></header><main>${(views[state.screen] || renderHome)()}</main><footer>LoL Quiz は Riot Games によって承認されたものではなく、Riot Games またはその関係者の見解や意見を反映するものではありません。</footer></div>`;
   bindEvents();
 }
 
 function renderHome() {
-  return `<section class="hero"><p class="eyebrow">KNOW YOUR CHAMPION</p><h1>知識を、試練へ。</h1><p>League of Legendsのチャンピオンを、7つのクイズで極めよう。</p></section><section class="quiz-grid">${QUIZZES.map((quiz) => `<button class="quiz-card" data-quiz="${quiz.id}"><span class="card-icon">${quiz.icon}</span><span><strong>${quiz.title}</strong><small>${quiz.description}</small></span><span class="arrow">→</span></button>`).join('')}</section><p class="demo-note">Champion / Zoom / Skill Icon / Skill Name / Skill Descriptionを実装済みです。</p>`;
+  return `<section class="hero"><p class="eyebrow">KNOW YOUR CHAMPION</p><h1>知識を、試練へ。</h1><p>League of Legendsのチャンピオンを、7つのクイズで極めよう。</p></section><section class="quiz-grid">${QUIZZES.map((quiz) => `<button class="quiz-card" data-quiz="${quiz.id}"><span class="card-icon">${quiz.icon}</span><span><strong>${quiz.title}</strong><small>${quiz.description}</small></span><span class="arrow">→</span></button>`).join('')}</section><p class="demo-note">6種類のQuizを実装済みです。Mixedは次のPhaseで追加します。</p>`;
 }
 
 function renderSettings() {
@@ -42,6 +43,7 @@ function renderQuiz() {
   if (state.quizId === 'skill-icon') return renderSkillIconQuiz();
   if (state.quizId === 'skill-name') return renderSkillNameQuiz();
   if (state.quizId === 'skill-description') return renderSkillDescriptionQuiz();
+  if (state.quizId === 'voice') return renderVoiceQuiz();
   const quiz = findQuiz(state.quizId);
   const questionNumber = state.session.currentIndex + 1;
   const lastAnswer = state.session.answers.at(-1);
@@ -90,6 +92,16 @@ function renderSkillDescriptionQuiz() {
   return `<section class="quiz-layout"><div class="quiz-top"><div><span class="eyebrow">SKILL DESCRIPTION</span><strong>${questionNumber} <small>/ ${state.session.questionCount}</small></strong></div><button class="danger" data-action="finish">終了</button></div><div class="progress"><span style="width:${questionNumber / state.session.questionCount * 100}%"></span></div><article class="question-panel skill-description-question"><p class="eyebrow">WHO USES THIS SKILL?</p><span class="slot-mystery">?</span><div class="description-text">${description}</div><p>このスキルを使うChampionは？</p></article>${answerArea}</section>`;
 }
 
+function renderVoiceQuiz() {
+  const questionNumber = state.session.currentIndex + 1;
+  const champion = state.repository.getById(state.question.championId);
+  const lastAnswer = state.session.answers.at(-1);
+  const answerArea = state.answered
+    ? `<section class="feedback ${lastAnswer.correct ? 'correct' : 'wrong'}"><strong>${lastAnswer.correct ? '正解' : '不正解'}</strong><div class="answer-reveal"><img src="${champion.icon}" alt=""><div><span>正解</span><h2>${champion.nameJa}</h2><p>${champion.nameEn}</p></div></div><button class="primary" data-action="next">${questionNumber === state.session.questionCount ? 'RESULT' : '次の問題'}</button></section>`
+    : renderChampionAnswerArea();
+  return `<section class="quiz-layout"><div class="quiz-top"><div><span class="eyebrow">VOICE</span><strong>${questionNumber} <small>/ ${state.session.questionCount}</small></strong></div><button class="danger" data-action="finish">終了</button></div><div class="progress"><span style="width:${questionNumber / state.session.questionCount * 100}%"></span></div><article class="question-panel voice-question"><p class="eyebrow">LISTEN AND IDENTIFY</p><span class="voice-emblem">♪</span><h1>この声のChampionは？</h1><div class="voice-controls"><button class="voice-button" data-voice="pick"><strong>▶ Pickを聞く</strong><small>選択時のボイス</small></button><button class="voice-button" data-voice="ban"><strong>▶ Banを聞く</strong><small>Ban時のボイス</small></button></div><p class="voice-status" aria-live="polite">何度でも再生できます</p></article>${answerArea}</section>`;
+}
+
 function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
 }
@@ -125,7 +137,25 @@ function bindEvents() {
   document.querySelectorAll('[data-answer]').forEach((button) => button.addEventListener('click', () => { state.session = recordAnswer(state.session, { correct: button.dataset.answer === 'true', quizType: state.quizId }); state.answered = true; render(); }));
   document.querySelectorAll('[data-champion-answer]').forEach((button) => button.addEventListener('click', () => submitChampionAnswer(Number(button.dataset.championAnswer))));
   document.querySelector('[data-hard-answer]')?.addEventListener('submit', (event) => { event.preventDefault(); submitChampionAnswer(new FormData(event.currentTarget).get('champion')); });
+  document.querySelectorAll('[data-voice]').forEach((button) => button.addEventListener('click', () => playVoice(button.dataset.voice, button)));
   document.querySelectorAll('[data-action]').forEach((button) => button.addEventListener('click', () => handleAction(button.dataset.action)));
+}
+
+async function playVoice(kind, button) {
+  const status = document.querySelector('.voice-status');
+  button.disabled = true;
+  if (status) status.textContent = `${kind === 'pick' ? 'Pick' : 'Ban'}を再生中…`;
+  try {
+    const audio = new Audio(state.question.voice[kind]);
+    await audio.play();
+    audio.addEventListener('ended', () => { button.disabled = false; if (status) status.textContent = '何度でも再生できます'; }, { once: true });
+  } catch (error) {
+    const champion = state.repository.getById(state.question.championId);
+    state.excludedIds.add(champion.id);
+    console.error(`[Voice Quiz] ${champion.key} ${kind} audio failed; replacing question`, error);
+    await prepareQuestion();
+    render();
+  }
 }
 
 function submitChampionAnswer(answer) {
@@ -160,18 +190,18 @@ async function handleAction(action) {
 
 async function prepareQuestion() {
   state.question = null;
-  if (!['champion', 'zoom', 'skill-icon', 'skill-name', 'skill-description'].includes(state.quizId)) return;
+  if (!['champion', 'zoom', 'skill-icon', 'skill-name', 'skill-description', 'voice'].includes(state.quizId)) return;
   const index = state.session.currentIndex;
   const usedIds = new Set(state.session.candidateIds.slice(0, index));
   const candidates = [state.session.candidateIds[index], ...state.repository.ids().filter((id) => !state.session.candidateIds.includes(id))];
   for (const championId of candidates) {
     if (usedIds.has(championId) || state.excludedIds.has(championId)) continue;
     const champion = state.repository.getById(championId);
-    const factories = { champion: createChampionQuestion, zoom: createZoomQuestion, 'skill-icon': createSkillIconQuestion, 'skill-name': createSkillNameQuestion, 'skill-description': createSkillDescriptionQuestion };
+    const factories = { champion: createChampionQuestion, zoom: createZoomQuestion, 'skill-icon': createSkillIconQuestion, 'skill-name': createSkillNameQuestion, 'skill-description': createSkillDescriptionQuestion, voice: createVoiceQuestion };
     const factory = factories[state.quizId];
     try {
       const question = factory({ champion, champions: state.repository.all(), difficulty: state.difficulty });
-      await preloadImage(question.image);
+      if (state.quizId !== 'voice') await preloadImage(question.image);
       const candidateIds = [...state.session.candidateIds];
       candidateIds[index] = championId;
       state.session = { ...state.session, candidateIds };

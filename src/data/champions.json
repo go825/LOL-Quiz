@@ -2,12 +2,14 @@
   "metadata": {
     "schemaVersion": 1,
     "dataDragonVersion": "16.16.1",
+    "communityDragonVersion": "latest",
     "locales": [
       "ja_JP",
       "en_US"
     ],
-    "generatedAt": "2026-08-12T05:39:32.561Z",
-    "championCount": 173
+    "generatedAt": "2026-08-12T06:54:09.775Z",
+    "championCount": 173,
+    "voiceChampionCount": 173
   },
   "champions": [
     {
@@ -51,8 +53,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/1.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/1.ogg"
       }
     },
     {
@@ -96,8 +98,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/2.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/2.ogg"
       }
     },
     {
@@ -141,8 +143,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/3.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/3.ogg"
       }
     },
     {
@@ -186,8 +188,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/4.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/4.ogg"
       }
     },
     {
@@ -231,8 +233,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/5.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/5.ogg"
       }
     },
     {
@@ -276,8 +278,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/6.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/6.ogg"
       }
     },
     {
@@ -321,8 +323,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/7.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/7.ogg"
       }
     },
     {
@@ -366,8 +368,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/8.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/8.ogg"
       }
     },
     {
@@ -411,8 +413,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/9.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/9.ogg"
       }
     },
     {
@@ -456,8 +458,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/10.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/10.ogg"
       }
     },
     {
@@ -501,8 +503,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/11.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/11.ogg"
       }
     },
     {
@@ -546,8 +548,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/12.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/12.ogg"
       }
     },
     {
@@ -591,8 +593,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/13.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/13.ogg"
       }
     },
     {
@@ -636,8 +638,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/14.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/14.ogg"
       }
     },
     {
@@ -681,8 +683,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/15.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/15.ogg"
       }
     },
     {
@@ -726,8 +728,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/16.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/16.ogg"
       }
     },
     {
@@ -771,8 +773,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/17.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/17.ogg"
       }
     },
     {
@@ -816,8 +818,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/18.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/18.ogg"
       }
     },
     {
@@ -861,8 +863,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/19.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/19.ogg"
       }
     },
     {
@@ -906,8 +908,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/20.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/20.ogg"
       }
     },
     {
@@ -951,8 +953,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/21.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/21.ogg"
       }
     },
     {
@@ -996,8 +998,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/22.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/22.ogg"
       }
     },
     {
@@ -1041,8 +1043,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/23.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/23.ogg"
       }
     },
     {
@@ -1086,8 +1088,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/24.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/24.ogg"
       }
     },
     {
@@ -1131,8 +1133,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/25.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/25.ogg"
       }
     },
     {
@@ -1176,8 +1178,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/26.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/26.ogg"
       }
     },
     {
@@ -1221,8 +1223,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/27.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/27.ogg"
       }
     },
     {
@@ -1266,8 +1268,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/28.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/28.ogg"
       }
     },
     {
@@ -1311,8 +1313,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/29.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/29.ogg"
       }
     },
     {
@@ -1356,8 +1358,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/30.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/30.ogg"
       }
     },
     {
@@ -1401,8 +1403,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/31.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/31.ogg"
       }
     },
     {
@@ -1446,8 +1448,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/32.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/32.ogg"
       }
     },
     {
@@ -1491,8 +1493,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/33.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/33.ogg"
       }
     },
     {
@@ -1536,8 +1538,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/34.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/34.ogg"
       }
     },
     {
@@ -1581,8 +1583,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/35.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/35.ogg"
       }
     },
     {
@@ -1626,8 +1628,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/36.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/36.ogg"
       }
     },
     {
@@ -1671,8 +1673,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/37.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/37.ogg"
       }
     },
     {
@@ -1716,8 +1718,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/38.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/38.ogg"
       }
     },
     {
@@ -1761,8 +1763,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/39.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/39.ogg"
       }
     },
     {
@@ -1806,8 +1808,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/40.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/40.ogg"
       }
     },
     {
@@ -1851,8 +1853,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/41.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/41.ogg"
       }
     },
     {
@@ -1896,8 +1898,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/42.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/42.ogg"
       }
     },
     {
@@ -1941,8 +1943,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/43.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/43.ogg"
       }
     },
     {
@@ -1986,8 +1988,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/44.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/44.ogg"
       }
     },
     {
@@ -2031,8 +2033,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/45.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/45.ogg"
       }
     },
     {
@@ -2076,8 +2078,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/48.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/48.ogg"
       }
     },
     {
@@ -2121,8 +2123,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/50.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/50.ogg"
       }
     },
     {
@@ -2166,8 +2168,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/51.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/51.ogg"
       }
     },
     {
@@ -2211,8 +2213,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/53.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/53.ogg"
       }
     },
     {
@@ -2256,8 +2258,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/54.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/54.ogg"
       }
     },
     {
@@ -2301,8 +2303,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/55.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/55.ogg"
       }
     },
     {
@@ -2346,8 +2348,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/56.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/56.ogg"
       }
     },
     {
@@ -2391,8 +2393,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/57.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/57.ogg"
       }
     },
     {
@@ -2436,8 +2438,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/58.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/58.ogg"
       }
     },
     {
@@ -2481,8 +2483,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/59.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/59.ogg"
       }
     },
     {
@@ -2526,8 +2528,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/60.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/60.ogg"
       }
     },
     {
@@ -2571,8 +2573,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/61.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/61.ogg"
       }
     },
     {
@@ -2616,8 +2618,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/62.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/62.ogg"
       }
     },
     {
@@ -2661,8 +2663,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/63.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/63.ogg"
       }
     },
     {
@@ -2706,8 +2708,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/64.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/64.ogg"
       }
     },
     {
@@ -2751,8 +2753,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/67.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/67.ogg"
       }
     },
     {
@@ -2796,8 +2798,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/68.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/68.ogg"
       }
     },
     {
@@ -2841,8 +2843,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/69.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/69.ogg"
       }
     },
     {
@@ -2886,8 +2888,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/72.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/72.ogg"
       }
     },
     {
@@ -2931,8 +2933,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/74.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/74.ogg"
       }
     },
     {
@@ -2976,8 +2978,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/75.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/75.ogg"
       }
     },
     {
@@ -3021,8 +3023,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/76.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/76.ogg"
       }
     },
     {
@@ -3066,8 +3068,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/77.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/77.ogg"
       }
     },
     {
@@ -3111,8 +3113,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/78.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/78.ogg"
       }
     },
     {
@@ -3156,8 +3158,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/79.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/79.ogg"
       }
     },
     {
@@ -3201,8 +3203,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/80.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/80.ogg"
       }
     },
     {
@@ -3246,8 +3248,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/81.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/81.ogg"
       }
     },
     {
@@ -3291,8 +3293,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/82.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/82.ogg"
       }
     },
     {
@@ -3336,8 +3338,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/83.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/83.ogg"
       }
     },
     {
@@ -3381,8 +3383,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/84.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/84.ogg"
       }
     },
     {
@@ -3426,8 +3428,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/85.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/85.ogg"
       }
     },
     {
@@ -3471,8 +3473,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/86.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/86.ogg"
       }
     },
     {
@@ -3516,8 +3518,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/89.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/89.ogg"
       }
     },
     {
@@ -3561,8 +3563,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/90.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/90.ogg"
       }
     },
     {
@@ -3606,8 +3608,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/91.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/91.ogg"
       }
     },
     {
@@ -3651,8 +3653,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/92.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/92.ogg"
       }
     },
     {
@@ -3696,8 +3698,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/96.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/96.ogg"
       }
     },
     {
@@ -3741,8 +3743,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/98.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/98.ogg"
       }
     },
     {
@@ -3786,8 +3788,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/99.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/99.ogg"
       }
     },
     {
@@ -3831,8 +3833,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/101.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/101.ogg"
       }
     },
     {
@@ -3876,8 +3878,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/102.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/102.ogg"
       }
     },
     {
@@ -3921,8 +3923,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/103.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/103.ogg"
       }
     },
     {
@@ -3966,8 +3968,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/104.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/104.ogg"
       }
     },
     {
@@ -4011,8 +4013,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/105.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/105.ogg"
       }
     },
     {
@@ -4056,8 +4058,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/106.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/106.ogg"
       }
     },
     {
@@ -4101,8 +4103,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/107.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/107.ogg"
       }
     },
     {
@@ -4146,8 +4148,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/110.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/110.ogg"
       }
     },
     {
@@ -4191,8 +4193,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/111.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/111.ogg"
       }
     },
     {
@@ -4236,8 +4238,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/112.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/112.ogg"
       }
     },
     {
@@ -4281,8 +4283,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/113.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/113.ogg"
       }
     },
     {
@@ -4326,8 +4328,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/114.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/114.ogg"
       }
     },
     {
@@ -4371,8 +4373,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/115.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/115.ogg"
       }
     },
     {
@@ -4416,8 +4418,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/117.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/117.ogg"
       }
     },
     {
@@ -4461,8 +4463,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/119.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/119.ogg"
       }
     },
     {
@@ -4506,8 +4508,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/120.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/120.ogg"
       }
     },
     {
@@ -4551,8 +4553,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/121.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/121.ogg"
       }
     },
     {
@@ -4596,8 +4598,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/122.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/122.ogg"
       }
     },
     {
@@ -4641,8 +4643,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/126.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/126.ogg"
       }
     },
     {
@@ -4686,8 +4688,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/127.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/127.ogg"
       }
     },
     {
@@ -4731,8 +4733,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/131.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/131.ogg"
       }
     },
     {
@@ -4776,8 +4778,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/133.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/133.ogg"
       }
     },
     {
@@ -4821,8 +4823,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/134.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/134.ogg"
       }
     },
     {
@@ -4866,8 +4868,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/136.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/136.ogg"
       }
     },
     {
@@ -4911,8 +4913,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/141.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/141.ogg"
       }
     },
     {
@@ -4956,8 +4958,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/142.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/142.ogg"
       }
     },
     {
@@ -5001,8 +5003,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/143.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/143.ogg"
       }
     },
     {
@@ -5046,8 +5048,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/145.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/145.ogg"
       }
     },
     {
@@ -5091,8 +5093,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/147.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/147.ogg"
       }
     },
     {
@@ -5136,8 +5138,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/150.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/150.ogg"
       }
     },
     {
@@ -5181,8 +5183,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/154.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/154.ogg"
       }
     },
     {
@@ -5226,8 +5228,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/157.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/157.ogg"
       }
     },
     {
@@ -5271,8 +5273,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/161.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/161.ogg"
       }
     },
     {
@@ -5316,8 +5318,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/163.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/163.ogg"
       }
     },
     {
@@ -5361,8 +5363,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/164.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/164.ogg"
       }
     },
     {
@@ -5406,8 +5408,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/166.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/166.ogg"
       }
     },
     {
@@ -5451,8 +5453,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/200.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/200.ogg"
       }
     },
     {
@@ -5496,8 +5498,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/201.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/201.ogg"
       }
     },
     {
@@ -5541,8 +5543,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/202.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/202.ogg"
       }
     },
     {
@@ -5586,8 +5588,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/203.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/203.ogg"
       }
     },
     {
@@ -5631,8 +5633,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/221.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/221.ogg"
       }
     },
     {
@@ -5676,8 +5678,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/222.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/222.ogg"
       }
     },
     {
@@ -5721,8 +5723,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/223.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/223.ogg"
       }
     },
     {
@@ -5766,8 +5768,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/233.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/233.ogg"
       }
     },
     {
@@ -5811,8 +5813,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/234.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/234.ogg"
       }
     },
     {
@@ -5856,8 +5858,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/235.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/235.ogg"
       }
     },
     {
@@ -5901,8 +5903,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/236.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/236.ogg"
       }
     },
     {
@@ -5946,8 +5948,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/238.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/238.ogg"
       }
     },
     {
@@ -5991,8 +5993,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/240.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/240.ogg"
       }
     },
     {
@@ -6036,8 +6038,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/245.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/245.ogg"
       }
     },
     {
@@ -6081,8 +6083,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/246.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/246.ogg"
       }
     },
     {
@@ -6126,8 +6128,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/254.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/254.ogg"
       }
     },
     {
@@ -6171,8 +6173,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/266.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/266.ogg"
       }
     },
     {
@@ -6216,8 +6218,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/267.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/267.ogg"
       }
     },
     {
@@ -6261,8 +6263,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/268.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/268.ogg"
       }
     },
     {
@@ -6306,8 +6308,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/350.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/350.ogg"
       }
     },
     {
@@ -6351,8 +6353,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/360.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/360.ogg"
       }
     },
     {
@@ -6396,8 +6398,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/412.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/412.ogg"
       }
     },
     {
@@ -6441,8 +6443,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/420.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/420.ogg"
       }
     },
     {
@@ -6486,8 +6488,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/421.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/421.ogg"
       }
     },
     {
@@ -6531,8 +6533,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/427.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/427.ogg"
       }
     },
     {
@@ -6576,8 +6578,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/429.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/429.ogg"
       }
     },
     {
@@ -6621,8 +6623,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/432.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/432.ogg"
       }
     },
     {
@@ -6666,8 +6668,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/497.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/497.ogg"
       }
     },
     {
@@ -6711,8 +6713,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/498.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/498.ogg"
       }
     },
     {
@@ -6756,8 +6758,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/516.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/516.ogg"
       }
     },
     {
@@ -6801,8 +6803,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/517.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/517.ogg"
       }
     },
     {
@@ -6846,8 +6848,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/518.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/518.ogg"
       }
     },
     {
@@ -6891,8 +6893,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/523.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/523.ogg"
       }
     },
     {
@@ -6936,8 +6938,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/526.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/526.ogg"
       }
     },
     {
@@ -6981,8 +6983,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/555.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/555.ogg"
       }
     },
     {
@@ -7026,8 +7028,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/711.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/711.ogg"
       }
     },
     {
@@ -7071,8 +7073,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/777.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/777.ogg"
       }
     },
     {
@@ -7116,8 +7118,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/799.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/799.ogg"
       }
     },
     {
@@ -7161,8 +7163,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/800.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/800.ogg"
       }
     },
     {
@@ -7206,8 +7208,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/804.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/804.ogg"
       }
     },
     {
@@ -7251,8 +7253,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/805.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/805.ogg"
       }
     },
     {
@@ -7296,8 +7298,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/875.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/875.ogg"
       }
     },
     {
@@ -7341,8 +7343,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/876.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/876.ogg"
       }
     },
     {
@@ -7386,8 +7388,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/887.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/887.ogg"
       }
     },
     {
@@ -7431,8 +7433,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/888.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/888.ogg"
       }
     },
     {
@@ -7476,8 +7478,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/893.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/893.ogg"
       }
     },
     {
@@ -7521,8 +7523,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/895.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/895.ogg"
       }
     },
     {
@@ -7566,8 +7568,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/897.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/897.ogg"
       }
     },
     {
@@ -7611,8 +7613,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/901.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/901.ogg"
       }
     },
     {
@@ -7656,8 +7658,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/902.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/902.ogg"
       }
     },
     {
@@ -7701,8 +7703,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/904.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/904.ogg"
       }
     },
     {
@@ -7746,8 +7748,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/910.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/910.ogg"
       }
     },
     {
@@ -7791,8 +7793,8 @@
         }
       },
       "voice": {
-        "pick": null,
-        "ban": null
+        "pick": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-choose-vo/950.ogg",
+        "ban": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ja_jp/v1/champion-ban-vo/950.ogg"
       }
     }
   ]

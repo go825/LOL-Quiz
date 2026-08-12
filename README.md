@@ -2,7 +2,7 @@
 
 League of Legendsのチャンピオン情報を使った、日本語向けクイズWebアプリです。Champion、Zoom、Skill Icon、Skill Name、Skill Description、Voice、Mixedの7形式を、PCとスマートフォンの両方で遊べる構成を目指しています。
 
-現在は **Phase 7（Skill Description Quiz）** まで完了しています。Champion、Zoom、Skill Icon、Skill Name、Skill DescriptionをEasy 4択、Normal 8択、Hardの日英名入力で遊べます。VoiceとMixedは共通フロー確認用のダミー表示です。詳しい進行状況は [WORKLOG.md](./WORKLOG.md) を参照してください。
+現在は **Phase 8（Voice Quiz）** まで完了しています。Mixedを除く6形式をEasy 4択、Normal 8択、Hardの日英名入力で遊べます。Voiceでは日本語Pick/Banボイスを自由に再生できます。詳しい進行状況は [WORKLOG.md](./WORKLOG.md) を参照してください。
 
 ## ローカル起動
 
@@ -23,7 +23,7 @@ npm run build
 
 ## Championデータ更新
 
-Data Dragonの最新バージョンから `ja_JP` / `en_US` を取得して `src/data/champions.json` を再生成します。
+Data Dragonの最新バージョンから `ja_JP` / `en_US`、CommunityDragonから日本語Pick/Ban音声一覧を取得して `src/data/champions.json` を再生成します。
 
 ```bash
 npm run data:update
@@ -36,7 +36,7 @@ npm run data:update
 - [Riot Data Dragon](https://developer.riotgames.com/docs/lol#data-dragon)
 - [CommunityDragon](https://www.communitydragon.org/)
 
-大容量画像・音声はリポジトリに保存せず、URLを保持して必要時に読み込む方針です。
+大容量画像・音声はリポジトリに保存せず、URLを保持して必要時に読み込みます。音声更新時はCommunityDragonのPick/Ban両ディレクトリを照合し、実在するChampion IDだけを採用します。
 
 ## Render公開（予定）
 

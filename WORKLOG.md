@@ -4,9 +4,9 @@
 
 ## 現在地
 
-- 現在のPhase: Phase 7 — Skill Description Quiz
+- 現在のPhase: Phase 8 — Voice Quiz
 - 状態: 実装・検証完了、GitHub公開準備中
-- 次に行うこと: Phase 7をpush後、Phase 8（Voice Quiz）の日本語音声調査へ進む
+- 次に行うこと: Phase 8をpush後、Phase 9（Mixed Quiz）へ進む
 - 先のPhaseを実装しない: 各Phaseを個別に確認してから進行する
 
 ## 2026-08-12 — Phase 1
@@ -191,4 +191,41 @@
 ### 残課題
 
 - VoiceはCommunityDragonで日本語Pick/Banを実データ確認してから実装判断する
+- Mixedは未実装
+
+## 2026-08-12 — Phase 8
+
+### 調査結果
+
+- CommunityDragon `latest/.../global/ja_jp/v1/` に日本語Pick/Banディレクトリが存在
+- Pick 173件、Ban 173件が現在のData Dragon全173 Champion IDと完全一致
+- 代表確認: Annie(1)、Jhin(202)、Mel(888)のPick/Ban計6ファイル
+- 全代表ファイルでHTTP 206、`audio/ogg`、`OggS`、CORS `*`を確認
+- 固定版`16.16`は存在しないため、更新時に`latest`の実ディレクトリを毎回照合する方式を採用
+
+### 実装
+
+- Champion更新スクリプトにCommunityDragon日本語Pick/Ban一覧の取得・ID照合を追加
+- 全173 Championへ実在確認済みのPick/Ban URLを付与
+- Pick/Ban URL必須の独立Voice Quiz Moduleを追加
+- 音声は問題開始時にロードせず、各再生ボタンを押した時点で初めて取得
+- Pick/Banを自由に繰り返し再生可能なUIを追加
+- Easy 4択、Normal 8択、Hard日英入力を既存回答基盤から再利用
+- 再生失敗時は開発consoleへ詳細を出し、本番画面には出さず別Championへ差し替え
+
+### 確認項目
+
+- [x] 自動テスト19件成功
+- [x] 生成JSONでVoice欠損0件、JhinのPick/Ban URL確認
+- [x] ビルド・構文確認成功
+- [x] ブラウザで日本語Pick再生開始・終了・再再生可能状態を確認
+- [x] ブラウザで日本語Ban再生開始を確認
+- [x] Easy 4択、Normal 8択、Hard入力を確認
+- [x] 回答後の正解Champion日英名・Iconを確認
+- [x] 390×844pxで2音声ボタンとHard入力を確認
+- [x] ブラウザconsole errorなし
+
+### 残課題
+
+- `latest`の提供構造が変わった場合、更新スクリプトは失敗して不完全データの生成を防ぐ。作業者がCommunityDragon構造を再確認する
 - Mixedは未実装
