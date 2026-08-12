@@ -1,8 +1,12 @@
 import { QUIZZES, findQuiz } from './quizzes/catalog.js';
+import { ChampionRepository } from './core/data/champion-repository.js';
 import { DIFFICULTIES, QUESTION_COUNTS, advanceSession, createSession, endSession, getResult, recordAnswer } from './core/quiz/session.js';
 
 const app = document.querySelector('#app');
-const demoChampionIds = Array.from({ length: 60 }, (_, index) => index + 1);
+const repositoryPromise = ChampionRepository.load().catch((error) => {
+  console.error('[LoL Quiz] Champion Repository initialization failed', error);
+  return null;
+});
 const state = { screen: 'home', quizId: null, difficulty: 'easy', questionCount: 5, session: null, answered: false };
 
 function navigate(screen) {
@@ -14,7 +18,7 @@ function navigate(screen) {
 
 function render() {
   const views = { home: renderHome, settings: renderSettings, quiz: renderQuiz, result: renderResult };
-  app.innerHTML = `<div class="app-shell"><header class="site-header"><button class="brand" data-action="home"><span class="brand-mark">LQ</span><span>LoL QUIZ</span></button><span class="phase-badge">PHASE 1</span></header><main>${(views[state.screen] || renderHome)()}</main><footer>LoL Quiz は Riot Games によって承認されたものではなく、Riot Games またはその関係者の見解や意見を反映するものではありません。</footer></div>`;
+  app.innerHTML = `<div class="app-shell"><header class="site-header"><button class="brand" data-action="home"><span class="brand-mark">LQ</span><span>LoL QUIZ</span></button><span class="phase-badge">PHASE 2</span></header><main>${(views[state.screen] || renderHome)()}</main><footer>LoL Quiz は Riot Games によって承認されたものではなく、Riot Games またはその関係者の見解や意見を反映するものではありません。</footer></div>`;
   bindEvents();
 }
 
@@ -48,11 +52,13 @@ function bindEvents() {
   document.querySelectorAll('[data-action]').forEach((button) => button.addEventListener('click', () => handleAction(button.dataset.action)));
 }
 
-function handleAction(action) {
+async function handleAction(action) {
   if (action === 'home') navigate('home');
   if (action === 'settings') navigate('settings');
   if (action === 'start' || action === 'retry') {
-    state.session = createSession({ quizType: state.quizId, difficulty: state.difficulty, questionCount: state.questionCount, championIds: demoChampionIds });
+    const repository = await repositoryPromise;
+    if (!repository) return;
+    state.session = createSession({ quizType: state.quizId, difficulty: state.difficulty, questionCount: state.questionCount, championIds: repository.ids() });
     state.answered = false;
     navigate('quiz');
   }

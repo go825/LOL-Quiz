@@ -4,9 +4,9 @@
 
 ## 現在地
 
-- 現在のPhase: Phase 1 — プロジェクト基盤
-- 状態: 実装・ローカル検証完了、GitHubブランチ公開準備完了
-- 次に行うこと: Phase 1のユーザー確認後、Phase 2（Championデータ基盤）へ進む
+- 現在のPhase: Phase 2 — Championデータ基盤
+- 状態: 実装・検証完了、GitHub公開準備中
+- 次に行うこと: Phase 2の検証・push後、Phase 3（Champion Quiz）へ進む
 - 先のPhaseを実装しない: 各Phaseを個別に確認してから進行する
 
 ## 2026-08-12 — Phase 1
@@ -40,3 +40,27 @@
 ## 更新ルール
 
 各作業単位で、日付とPhase、実装内容、確認結果、残課題、次の一手を追記します。
+
+## 2026-08-12 — Phase 2
+
+### 実装
+
+- Data Dragonの最新バージョン、`ja_JP`、`en_US`を取得する手動更新スクリプトを追加
+- Champion ID、内部名、日英名、Icon、Base Splash、P/Q/W/E/Rを共通形式へ正規化
+- 生成元バージョン・日時・件数を含む `src/data/champions.json` を生成
+- ID・内部名・日英名検索を提供するChampion Repositoryを追加
+- Quiz Sessionの候補IDを生成済みRepositoryから取得するよう変更
+- 取得・正規化失敗時にChampion名を含む開発ログを出す処理を追加
+
+### 確認項目
+
+- [x] Data Dragon 16.16.1から全173 Championを生成
+- [x] Jhin: `202 / ジン / Jhin / R=｢終演 -フィナーレ-｣`
+- [x] 正規化・Repository・既存Sessionの自動テスト成功（5テスト）
+- [x] ビルド成功
+- [x] ブラウザでRepository JSONを読み込み、Session開始成功（console errorなし）
+
+### 残課題
+
+- Voice URLはPhase 8でCommunityDragonの実データを調査して追加する
+- Champion Quizの実問題UIはPhase 3で追加する

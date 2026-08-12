@@ -2,7 +2,7 @@
 
 League of Legendsのチャンピオン情報を使った、日本語向けクイズWebアプリです。Champion、Zoom、Skill Icon、Skill Name、Skill Description、Voice、Mixedの7形式を、PCとスマートフォンの両方で遊べる構成を目指しています。
 
-現在は **Phase 1（プロジェクト基盤）** です。HOME、クイズ設定、共通Quiz、Result、スコア、重複防止、途中終了、レスポンシブUIを実装済みで、問題部分は共通フロー確認用のダミー表示です。詳しい進行状況は [WORKLOG.md](./WORKLOG.md) を参照してください。
+現在は **Phase 2（Championデータ基盤）** まで完了しています。HOMEからResultまでの共通基盤に加え、Data Dragonの日英データを正規化したChampion Repositoryを利用できます。問題部分はまだ共通フロー確認用のダミー表示です。詳しい進行状況は [WORKLOG.md](./WORKLOG.md) を参照してください。
 
 ## ローカル起動
 
@@ -23,7 +23,13 @@ npm run build
 
 ## Championデータ更新
 
-Phase 2でData Dragon / CommunityDragonのデータを正規化する更新スクリプトを追加予定です。現時点では更新コマンドはありません。
+Data Dragonの最新バージョンから `ja_JP` / `en_US` を取得して `src/data/champions.json` を再生成します。
+
+```bash
+npm run data:update
+```
+
+特定バージョンを使う場合は `DDRAGON_VERSION` 環境変数を指定します。生成JSONにはバージョン、生成日時、Champion件数も記録されます。
 
 ## データソース
 
