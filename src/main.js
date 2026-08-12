@@ -31,7 +31,7 @@ function render() {
 }
 
 function renderHome() {
-  return `<section class="hero"><p class="eyebrow">KNOW YOUR CHAMPION</p><h1>知識を、試練へ。</h1><p>League of Legendsのチャンピオンを、7つのクイズで極めよう。</p></section><section class="quiz-grid">${QUIZZES.map((quiz) => `<button class="quiz-card" data-quiz="${quiz.id}"><span class="card-icon"><span>${quiz.icon}</span></span><span><strong>${quiz.title}</strong><small>${quiz.description}</small></span><span class="arrow">→</span></button>`).join('')}</section><p class="demo-note">全7種類のQuizを実装済みです。</p>`;
+  return `<section class="hero"><p class="eyebrow">KNOW YOUR CHAMPION</p><h1>己の知識で、試練に挑め</h1></section><section class="quiz-grid">${QUIZZES.map((quiz) => `<button class="quiz-card" data-quiz="${quiz.id}"><span class="card-icon"><span>${quiz.icon}</span></span><span><strong>${quiz.title}</strong><small>${quiz.description}</small></span><span class="arrow">→</span></button>`).join('')}</section>`;
 }
 
 function renderSettings() {
