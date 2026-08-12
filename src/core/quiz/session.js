@@ -47,12 +47,20 @@ export function endSession(session) {
 export function getResult(session) {
   const answered = session.answers.length;
   const correct = session.answers.filter(({ correct: isCorrect }) => isCorrect).length;
+  const byType = session.answers.reduce((result, answer) => {
+    const type = answer.quizType || session.quizType;
+    result[type] ||= { answered: 0, correct: 0 };
+    result[type].answered += 1;
+    if (answer.correct) result[type].correct += 1;
+    return result;
+  }, {});
   return {
     answered,
     correct,
     accuracy: answered === 0 ? 0 : Math.round((correct / answered) * 100),
     configured: session.questionCount,
     endedEarly: session.endedEarly,
+    byType,
   };
 }
 

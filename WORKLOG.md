@@ -4,9 +4,9 @@
 
 ## 現在地
 
-- 現在のPhase: Phase 8 — Voice Quiz
+- 現在のPhase: Phase 9 — Mixed Quiz
 - 状態: 実装・検証完了、GitHub公開準備中
-- 次に行うこと: Phase 8をpush後、Phase 9（Mixed Quiz）へ進む
+- 次に行うこと: Phase 9をpush後、Phase 10（UI・品質調整）へ進む
 - 先のPhaseを実装しない: 各Phaseを個別に確認してから進行する
 
 ## 2026-08-12 — Phase 1
@@ -192,6 +192,32 @@
 
 - VoiceはCommunityDragonで日本語Pick/Banを実データ確認してから実装判断する
 - Mixedは未実装
+
+## 2026-08-12 — Phase 9
+
+### 実装
+
+- Champion / Zoom / Skill Icon / Skill Name / Skill Description / Voiceの既存factoryを再利用するMixed Quiz Moduleを追加
+- 問題ごとに6形式からランダム選択し、選択形式が成立しない場合は別形式へフォールバック
+- Mixed専用の問題生成ロジックは複製せず、既存レンダラーと回答UIも再利用
+- 1セッション内のChampion重複防止を50問でも維持
+- 回答データへ実際の問題形式を記録し、Resultに種類別の正解数・回答数を表示
+- Voiceを含む各形式の取得失敗時もセッション全体を停止せず差し替え
+
+### 確認項目
+
+- [x] 自動テスト23件成功
+- [x] 実データ50体から重複なしMixed問題を生成し、5種類以上の混在を確認
+- [x] ビルド・構文確認成功
+- [x] ブラウザ6問でSkill Name / Skill Icon / Zoom / Championの混在を確認
+- [x] 途中終了Resultで4形式の種類別成績を確認
+- [x] Normal 8択、Hard入力、50問設定を確認
+- [x] 390×844pxでVoice形式とHard回答UIを確認
+- [x] ブラウザconsole errorなし
+
+### 残課題
+
+- Phase 10で全7形式・全難易度・全問題数の横断回帰、UI、エラーケースを最終調整する
 
 ## 2026-08-12 — Phase 8
 

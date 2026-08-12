@@ -6,6 +6,7 @@ import { createSkillIconQuestion } from './quizzes/skill-icon/skill-icon-quiz.js
 import { createSkillNameQuestion } from './quizzes/skill-name/skill-name-quiz.js';
 import { createSkillDescriptionQuestion, stripMarkup } from './quizzes/skill-description/skill-description-quiz.js';
 import { createVoiceQuestion } from './quizzes/voice/voice-quiz.js';
+import { createMixedQuestion } from './quizzes/mixed/mixed-quiz.js';
 import { DIFFICULTIES, QUESTION_COUNTS, advanceSession, createSession, endSession, getResult, recordAnswer } from './core/quiz/session.js';
 
 const app = document.querySelector('#app');
@@ -24,12 +25,12 @@ function navigate(screen) {
 
 function render() {
   const views = { home: renderHome, settings: renderSettings, quiz: renderQuiz, result: renderResult };
-  app.innerHTML = `<div class="app-shell"><header class="site-header"><button class="brand" data-action="home"><span class="brand-mark">LQ</span><span>LoL QUIZ</span></button><span class="phase-badge">PHASE 8</span></header><main>${(views[state.screen] || renderHome)()}</main><footer>LoL Quiz は Riot Games によって承認されたものではなく、Riot Games またはその関係者の見解や意見を反映するものではありません。</footer></div>`;
+  app.innerHTML = `<div class="app-shell"><header class="site-header"><button class="brand" data-action="home"><span class="brand-mark">LQ</span><span>LoL QUIZ</span></button><span class="phase-badge">PHASE 9</span></header><main>${(views[state.screen] || renderHome)()}</main><footer>LoL Quiz は Riot Games によって承認されたものではなく、Riot Games またはその関係者の見解や意見を反映するものではありません。</footer></div>`;
   bindEvents();
 }
 
 function renderHome() {
-  return `<section class="hero"><p class="eyebrow">KNOW YOUR CHAMPION</p><h1>知識を、試練へ。</h1><p>League of Legendsのチャンピオンを、7つのクイズで極めよう。</p></section><section class="quiz-grid">${QUIZZES.map((quiz) => `<button class="quiz-card" data-quiz="${quiz.id}"><span class="card-icon">${quiz.icon}</span><span><strong>${quiz.title}</strong><small>${quiz.description}</small></span><span class="arrow">→</span></button>`).join('')}</section><p class="demo-note">6種類のQuizを実装済みです。Mixedは次のPhaseで追加します。</p>`;
+  return `<section class="hero"><p class="eyebrow">KNOW YOUR CHAMPION</p><h1>知識を、試練へ。</h1><p>League of Legendsのチャンピオンを、7つのクイズで極めよう。</p></section><section class="quiz-grid">${QUIZZES.map((quiz) => `<button class="quiz-card" data-quiz="${quiz.id}"><span class="card-icon">${quiz.icon}</span><span><strong>${quiz.title}</strong><small>${quiz.description}</small></span><span class="arrow">→</span></button>`).join('')}</section><p class="demo-note">全7種類のQuizを実装済みです。</p>`;
 }
 
 function renderSettings() {
@@ -38,6 +39,10 @@ function renderSettings() {
 }
 
 function renderQuiz() {
+  if (state.quizId === 'mixed') {
+    const renderers = { champion: renderChampionQuiz, zoom: renderZoomQuiz, 'skill-icon': renderSkillIconQuiz, 'skill-name': renderSkillNameQuiz, 'skill-description': renderSkillDescriptionQuiz, voice: renderVoiceQuiz };
+    return renderers[state.question.type]();
+  }
   if (state.quizId === 'champion') return renderChampionQuiz();
   if (state.quizId === 'zoom') return renderZoomQuiz();
   if (state.quizId === 'skill-icon') return renderSkillIconQuiz();
@@ -127,7 +132,9 @@ function renderChampionAnswerArea() {
 function renderResult() {
   const quiz = findQuiz(state.quizId);
   const result = getResult(state.session);
-  return `<section class="panel result"><p class="eyebrow">RESULT · ${quiz.title.toUpperCase()}</p><h1>${result.correct} <small>/ ${result.answered}</small></h1><div class="accuracy"><strong>${result.accuracy}%</strong><span>正答率</span></div><dl><div><dt>設定問題数</dt><dd>${result.configured}</dd></div><div><dt>回答済み</dt><dd>${result.answered}</dd></div><div><dt>ステータス</dt><dd>${result.endedEarly ? '途中終了' : '完走'}</dd></div></dl><div class="result-actions"><button class="primary" data-action="retry">もう一度</button><button class="secondary" data-action="settings">設定を変更</button><button class="text-button" data-action="home">HOME</button></div></section>`;
+  const labels = { champion: 'Champion', zoom: 'Zoom', 'skill-icon': 'Skill Icon', 'skill-name': 'Skill Name', 'skill-description': 'Skill Description', voice: 'Voice' };
+  const breakdown = state.quizId === 'mixed' ? `<section class="type-results"><h2>種類別成績</h2>${Object.entries(result.byType).map(([type, score]) => `<div><span>${labels[type]}</span><strong>${score.correct} / ${score.answered}</strong></div>`).join('')}</section>` : '';
+  return `<section class="panel result"><p class="eyebrow">RESULT · ${quiz.title.toUpperCase()}</p><h1>${result.correct} <small>/ ${result.answered}</small></h1><div class="accuracy"><strong>${result.accuracy}%</strong><span>正答率</span></div><dl><div><dt>設定問題数</dt><dd>${result.configured}</dd></div><div><dt>回答済み</dt><dd>${result.answered}</dd></div><div><dt>ステータス</dt><dd>${result.endedEarly ? '途中終了' : '完走'}</dd></div></dl>${breakdown}<div class="result-actions"><button class="primary" data-action="retry">もう一度</button><button class="secondary" data-action="settings">設定を変更</button><button class="text-button" data-action="home">HOME</button></div></section>`;
 }
 
 function bindEvents() {
@@ -161,7 +168,7 @@ async function playVoice(kind, button) {
 function submitChampionAnswer(answer) {
   if (state.answered) return;
   const correct = checkChampionAnswer(state.question, answer, state.repository);
-  state.session = recordAnswer(state.session, { correct, quizType: state.quizId, championId: state.question.championId, answer });
+  state.session = recordAnswer(state.session, { correct, quizType: state.question.type, championId: state.question.championId, answer });
   state.answered = true;
   render();
 }
@@ -190,7 +197,7 @@ async function handleAction(action) {
 
 async function prepareQuestion() {
   state.question = null;
-  if (!['champion', 'zoom', 'skill-icon', 'skill-name', 'skill-description', 'voice'].includes(state.quizId)) return;
+  if (!['champion', 'zoom', 'skill-icon', 'skill-name', 'skill-description', 'voice', 'mixed'].includes(state.quizId)) return;
   const index = state.session.currentIndex;
   const usedIds = new Set(state.session.candidateIds.slice(0, index));
   const candidates = [state.session.candidateIds[index], ...state.repository.ids().filter((id) => !state.session.candidateIds.includes(id))];
@@ -198,10 +205,12 @@ async function prepareQuestion() {
     if (usedIds.has(championId) || state.excludedIds.has(championId)) continue;
     const champion = state.repository.getById(championId);
     const factories = { champion: createChampionQuestion, zoom: createZoomQuestion, 'skill-icon': createSkillIconQuestion, 'skill-name': createSkillNameQuestion, 'skill-description': createSkillDescriptionQuestion, voice: createVoiceQuestion };
-    const factory = factories[state.quizId];
+    const factory = state.quizId === 'mixed'
+      ? (input) => createMixedQuestion({ ...input, factories })
+      : factories[state.quizId];
     try {
       const question = factory({ champion, champions: state.repository.all(), difficulty: state.difficulty });
-      if (state.quizId !== 'voice') await preloadImage(question.image);
+      if (question.type !== 'voice') await preloadImage(question.image);
       const candidateIds = [...state.session.candidateIds];
       candidateIds[index] = championId;
       state.session = { ...state.session, candidateIds };
