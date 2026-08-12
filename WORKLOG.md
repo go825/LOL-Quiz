@@ -4,9 +4,9 @@
 
 ## 現在地
 
-- 現在のPhase: Phase 2 — Championデータ基盤
+- 現在のPhase: Phase 3 — Champion Quiz
 - 状態: 実装・検証完了、GitHub公開準備中
-- 次に行うこと: Phase 2の検証・push後、Phase 3（Champion Quiz）へ進む
+- 次に行うこと: Phase 3をpush後、Phase 4（Zoom Quiz）へ進む
 - 先のPhaseを実装しない: 各Phaseを個別に確認してから進行する
 
 ## 2026-08-12 — Phase 1
@@ -64,3 +64,30 @@
 
 - Voice URLはPhase 8でCommunityDragonの実データを調査して追加する
 - Champion Quizの実問題UIはPhase 3で追加する
+
+## 2026-08-12 — Phase 3
+
+### 実装
+
+- Champion Iconから名前を当てる独立Quiz Moduleを追加
+- Easy 4択、Normal 8択を全Championからランダム生成
+- Hardに日本語名・英語名の入力とブラウザサジェストを追加
+- 英語回答は大文字・小文字と全角・半角差を正規化
+- 回答後に正誤、正解Championの日英名・Iconを表示
+- 画像を問題表示時だけロードし、失敗時は未出題Championへ差し替え
+- 「次の問題」の手動遷移とセッション内Champion重複防止を維持
+
+### 確認項目
+
+- [x] 自動テスト8件成功（4択、8択、日英回答を含む）
+- [x] ビルド・全JavaScript構文確認成功
+- [x] Easyで4択、Normalで8択をブラウザ確認
+- [x] Hardで346件（日英173体）のサジェストを確認
+- [x] Hardで英語大文字回答が正解になることを確認
+- [x] 回答後の正解表示と次問Champion変更を確認
+- [x] ブラウザconsole errorなし
+
+### 残課題
+
+- Zoom以降の6形式は未実装
+- 選択肢順の統計的なランダム性は将来の品質調整時にも確認する

@@ -2,7 +2,7 @@
 
 League of Legendsのチャンピオン情報を使った、日本語向けクイズWebアプリです。Champion、Zoom、Skill Icon、Skill Name、Skill Description、Voice、Mixedの7形式を、PCとスマートフォンの両方で遊べる構成を目指しています。
 
-現在は **Phase 2（Championデータ基盤）** まで完了しています。HOMEからResultまでの共通基盤に加え、Data Dragonの日英データを正規化したChampion Repositoryを利用できます。問題部分はまだ共通フロー確認用のダミー表示です。詳しい進行状況は [WORKLOG.md](./WORKLOG.md) を参照してください。
+現在は **Phase 3（Champion Quiz）** まで完了しています。ChampionではEasy 4択、Normal 8択、Hardの日英名入力で遊べます。他のクイズ形式は共通フロー確認用のダミー表示です。詳しい進行状況は [WORKLOG.md](./WORKLOG.md) を参照してください。
 
 ## ローカル起動
 
