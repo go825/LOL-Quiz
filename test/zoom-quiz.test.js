@@ -17,15 +17,24 @@ test('難易度が上がるほど拡大率が上がる', () => {
   const easy = createZoomQuestion({ champion: champions[0], champions, difficulty: 'easy', random: () => 0.5 });
   const normal = createZoomQuestion({ champion: champions[0], champions, difficulty: 'normal', random: () => 0.5 });
   const hard = createZoomQuestion({ champion: champions[0], champions, difficulty: 'hard', random: () => 0.5 });
-  assert.deepEqual([easy.zoom, normal.zoom, hard.zoom], [2.4, 3, 3.6]);
+  assert.deepEqual([easy.zoom, normal.zoom, hard.zoom], [2.4, 3, 4.5]);
 });
 
 test('同じChampionでも乱数により表示位置が変化する', () => {
   const first = createZoomQuestion({ champion: champions[0], champions, difficulty: 'hard', random: () => 0 });
   const second = createZoomQuestion({ champion: champions[0], champions, difficulty: 'hard', random: () => 1 });
   assert.notDeepEqual(first.position, second.position);
-  assert.deepEqual(first.position, { x: 10, y: 10 });
-  assert.deepEqual(second.position, { x: 90, y: 90 });
+  assert.deepEqual(first.position, { x: 0, y: 0 });
+  assert.deepEqual(second.position, { x: 65, y: 65 });
+});
+
+test('Hardは中央帯を避けて外側から表示位置を選ぶ', () => {
+  const positions = Array.from({ length: 20 }, (_, index) => {
+    const values = [index / 20, (index + 0.5) / 20];
+    let cursor = 0;
+    return createZoomQuestion({ champion: champions[0], champions, difficulty: 'hard', random: () => values[cursor++ % values.length] }).position;
+  });
+  assert.ok(positions.every(({ x, y }) => (x <= 35 || x >= 65) && (y <= 35 || y >= 65)));
 });
 
 test('Easyは中央固定、NormalとHardは表示位置をランダム化する', () => {

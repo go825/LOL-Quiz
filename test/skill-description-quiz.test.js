@@ -1,11 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { createSkillDescriptionQuestion, revealsChampion, stripMarkup } from '../src/quizzes/skill-description/skill-description-quiz.js';
+import { checkSkillDescriptionAnswer, createSkillDescriptionQuestion, revealsChampion, stripMarkup } from '../src/quizzes/skill-description/skill-description-quiz.js';
 
 const ability = (position, description) => ({ name: `${position} Skill`, icon: `${position}.png`, description });
 const abilities = { P: ability('P', '通常攻撃が追加ダメージを与える。'), Q: ability('Q', '対象へ弾を放つ。'), W: ability('W', '移動速度が増加する。'), E: ability('E', '範囲内の敵をスロウにする。'), R: ability('R', '遠距離から強力な一撃を放つ。') };
 const champion = { id: 202, key: 'Jhin', nameJa: 'ジン', nameEn: 'Jhin', icon: 'Jhin.png', abilities };
-const champions = Array.from({ length: 10 }, (_, index) => index === 0 ? champion : ({ ...champion, id: 202 + index, key: `C${index}`, nameJa: `名前${index}`, nameEn: `Name${index}` }));
+const champions = Array.from({ length: 10 }, (_, index) => index === 0 ? champion : ({ ...champion, id: 202 + index, key: `C${index}`, nameJa: `名前${index}`, nameEn: `Name${index}`, abilities: Object.fromEntries(Object.entries(abilities).map(([position, value]) => [position, { ...value, name: `${position} Skill ${index}` }])) }));
 
 test('説明文と回答後情報を保持した問題を作る', () => {
   const question = createSkillDescriptionQuestion({ champion, champions, difficulty: 'normal', random: () => 0 });
@@ -13,11 +13,25 @@ test('説明文と回答後情報を保持した問題を作る', () => {
   assert.equal(question.ability.position, 'P');
   assert.match(question.ability.description, /追加ダメージ/);
   assert.equal(question.options.length, 8);
+  assert.equal(question.nameOptions.length, 8);
+  assert.ok(question.nameOptions.includes(question.ability.name));
+  assert.equal(checkSkillDescriptionAnswer(question, question.ability.name), true);
 });
 
 test('EasyではPassiveを出題しない', () => {
   const question = createSkillDescriptionQuestion({ champion, champions, difficulty: 'easy', random: () => 0 });
   assert.equal(question.ability.position, 'Q');
+  assert.equal(question.nameOptions.length, 4);
+});
+
+test('Hardは正解を含む実在スキル説明文の重複なし4択を作る', () => {
+  const question = createSkillDescriptionQuestion({ champion, champions, difficulty: 'hard', random: () => 0.5 });
+  assert.deepEqual(question.nameOptions, []);
+  assert.equal(question.descriptionOptions.length, 4);
+  assert.equal(new Set(question.descriptionOptions).size, 4);
+  assert.ok(question.descriptionOptions.includes(stripMarkup(question.ability.description)));
+  assert.equal(checkSkillDescriptionAnswer(question, question.ability.description), true);
+  assert.equal(checkSkillDescriptionAnswer(question, question.descriptionOptions.find((description) => description !== stripMarkup(question.ability.description))), false);
 });
 
 test('Champion名を直接含む説明は除外する', () => {
