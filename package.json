@@ -1,0 +1,13 @@
+{
+  "name": "lol-quiz",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "build": "node scripts/build.js",
+    "preview": "node scripts/dev.js dist",
+    "test": "node --test",
+    "data:update": "node scripts/update-champions.js"
+  }
+}
